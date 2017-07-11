@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <title>Polyview</title>
+***REMOVED***% load static %***REMOVED***
+***REMOVED***% load widget_tweaks %***REMOVED***
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %***REMOVED***"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %***REMOVED***"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <body data-spy="scroll" data-target=".navbar-fixed-top" >
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-static-top">
+   <!-- <a id="polyview-brand" class="<nav></nav>bar-brand" href="#">Polyview</a> -->
+   <div class = "container">
+        <a href = "#" id="polyview-brand" class = "navbar-brand">Polyview</a>
+        <ul class = "nav navbar-nav navbar-left">
+                <li class = "nav-link active"><a href = "#">Home</a></li>
+                <li class><a href = "#">Sign-In</a></li>
+                <li class><a href = "#">About</a></li>
+        </ul>       
+   </div>
+</nav>
+<div class="container-fluid">
+    <div class = "row ">
+    <div class = "col col-lg-2" id = "search-form">
+    <form action="/" method="post">
+    ***REMOVED***% csrf_token %***REMOVED***
+    ***REMOVED***% for field in form %***REMOVED***
+            <div class = "form-group">
+        ***REMOVED***{ field.label ***REMOVED******REMOVED***
+        ***REMOVED***{ field | add_class:"form-control" ***REMOVED******REMOVED***
+            </div>
+    ***REMOVED***% endfor %***REMOVED***
+        <input type="submit" class = "btn btn-primary" value="Submit" />
+    </form>
+    </div>
+    <div class = "col col-3 col-sm-5 col-md-7 col-lg-9 col-xl-10">
+***REMOVED***% if search_results %***REMOVED***
+    ***REMOVED***% for group in search_results %***REMOVED***
+        <table class = "table">
+            <thead>
+                <h3 class = course-title> {{ group.0.course***REMOVED******REMOVED*** </h3>
+                <tr>
+                    <th width = "4%">Class #</th>
+                    <th width = "4%">Course</th>
+                    <th width = "5%">Course #</th>
+                    <th width = "3%">Sec.</th>
+                    <th width = "3%">Type</th>
+                    <th width = "10%">Instructor</th>
+                    <th width = "5%">Avail.</th>
+                    <th width = "5%">Taken</th>
+                    <th width = "5%">Waiting</th>
+                    <th width = "8%">Status</th>
+                    <th width = "7%">Days</th>
+                    <th width = "6%">Start</th>
+                    <th width = "6%">End</th>
+                    <th width = "11%">Building</th>
+                    <th width = "4%">Room</th>
+                </tr>
+            </thead>
+            <tbody>
+            ***REMOVED***% for result in group %***REMOVED***
+            ***REMOVED***% if forloop.counter|divisibleby:2 %***REMOVED***<tr class="row-white {{result.status***REMOVED******REMOVED***">{% else %***REMOVED***<tr class="row-grey {{result.status***REMOVED******REMOVED***">{% endif %***REMOVED***
+                    <td>{{ result.class_field ***REMOVED******REMOVED***</td>
+                    <td>{{ result.course ***REMOVED******REMOVED***</td>
+                    <td>{{ result.course_num ***REMOVED******REMOVED***</td>
+                    <td>{{ result.sec_num ***REMOVED******REMOVED***</td>
+                    <td>{{ result.type ***REMOVED******REMOVED***</td>
+                    <td>{{ result.instructor ***REMOVED******REMOVED***</td>
+                    <td>{{ result.available ***REMOVED******REMOVED***</td>
+                    <td>{{ result.taken ***REMOVED******REMOVED***</td>
+                    <td>{{ result.waiting ***REMOVED******REMOVED***</td>
+                    <td>{{ result.status ***REMOVED******REMOVED***</td>
+                    <td>{{ result.days ***REMOVED******REMOVED***</td>
+                    <td>{{ result.start | date:'g:i A' ***REMOVED******REMOVED***</td>
+                    <td>{{ result.end | date:'g:i A' ***REMOVED******REMOVED***</td>
+                    <td>{{ result.building ***REMOVED******REMOVED***</td>
+                    <td>{{ result.room ***REMOVED******REMOVED***</td>
+               </tr>
+           ***REMOVED***% endfor %***REMOVED***
+           </tbody>
+        </table>
+    ***REMOVED***% endfor %***REMOVED***
+***REMOVED***% else %***REMOVED***
+    <div id = "no-results">
+        <p>No results found.</p>
+    </div>
+***REMOVED***% endif %***REMOVED***
+    </div>
+    </div>
+</div>
+<footer>
+</footer>
+</body>

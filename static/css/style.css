@@ -1,0 +1,87 @@
+body {
+    background-color: white;
+***REMOVED***
+
+.navbar {
+	background-color: #3a7d54;
+	border-color: darkgreen;
+***REMOVED***
+
+#polyview-brand {
+	color: white;
+	font-family: "Raleway";
+	font-size: 1em;
+***REMOVED***
+.nav a {
+	color: white !important;
+***REMOVED***
+
+.nav a:hover {
+	background: #38714e !important;
+***REMOVED***
+
+
+.nav .active a { 
+	background: #38714e !important;
+***REMOVED***
+
+.nav .active a:hover {
+	background: #2f5e42 !important;
+***REMOVED***
+
+.Open {
+	border-left: 4px solid #408e5f;
+***REMOVED***
+
+.Closed {
+	border-left: 4px solid #ffb517;
+***REMOVED***
+
+.Cancelled {
+	border-left: 4px solid #b41515;
+***REMOVED***
+
+#search-form {
+	margin: 10px;
+	padding: 20px;
+	margin-left: 25px;
+	background-color: #efefef;
+	border-style: solid;
+	border-color: lightgrey;
+	border-width: 1px;
+***REMOVED***
+
+.table {
+	border-style: solid;
+	border-color: lightgrey;
+	border-width: 1px;
+    table-layout: fixed;
+***REMOVED***
+
+.table td, tr {
+	white-space: nowrap; overflow: hidden; text-overflow:ellipsis;
+***REMOVED***
+
+.course-title {
+	margin-top: 10px;
+	font-family: "Raleway";
+	color: white;
+	background-color: #3a7d54;
+	border: solid 1px darkgreen;
+	padding: 2px;
+	padding-left: 10px;
+***REMOVED***
+
+.class-num {
+
+***REMOVED***
+
+.row-grey {
+	background-color: #efefef;
+***REMOVED***
+
+#no-results {
+	padding-top: 20px;
+	font-size: 16px;
+	color: grey;
+***REMOVED***
