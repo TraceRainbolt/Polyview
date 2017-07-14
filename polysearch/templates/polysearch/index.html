@@ -3,11 +3,15 @@
     <title>Polyview</title>
 ***REMOVED***% load static %***REMOVED***
 ***REMOVED***% load widget_tweaks %***REMOVED***
+***REMOVED***% load search_extras %***REMOVED***
     <meta name = "viewport" content = "width=device-width, initial-scale = 1.0"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %***REMOVED***"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %***REMOVED***"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <body data-spy="scroll" data-target=".navbar-fixed-top" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %***REMOVED***"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top">
@@ -28,29 +32,36 @@
     ***REMOVED***% csrf_token %***REMOVED***
     ***REMOVED***% for field in form %***REMOVED***
             <div class = "form-group">
-        ***REMOVED***{ field.label ***REMOVED******REMOVED***
-        ***REMOVED***{ field | add_class:"form-control" ***REMOVED******REMOVED***
+        ***REMOVED***% ifequal field.label "Department:"%***REMOVED***
+            ***REMOVED***{ field.label ***REMOVED******REMOVED***
+            <div id = "department-list">
+            ***REMOVED***{ field ***REMOVED******REMOVED***
+            </div>
+        ***REMOVED***% else %***REMOVED***
+            ***REMOVED***{ field.label ***REMOVED******REMOVED***
+            ***REMOVED***{ field|add_class:"form-control"***REMOVED******REMOVED***
+        ***REMOVED***% endifequal %***REMOVED***
             </div>
     ***REMOVED***% endfor %***REMOVED***
         <input type="submit" class = "btn btn-primary" value="Submit" />
     </form>
     </div>
-    <div class = "col col-3 col-sm-5 col-md-7 col-lg-9 col-xl-10">
+    <div class = "col col-lg-9 ">
 ***REMOVED***% if search_results %***REMOVED***
     ***REMOVED***% for group in search_results %***REMOVED***
-        <table class = "table">
+        <div>
+        <table id = "{{ group.0.0.course ***REMOVED******REMOVED***" class = "table">
+            <h3 class = "course-title"> {{ full_dep|get_item:group.0.0.course***REMOVED******REMOVED*** </h3>
             <thead>
-                <h3 class = course-title> {{ group.0.course***REMOVED******REMOVED*** </h3>
-                <tr>
+                <tr class = "row-desc">
                     <th width = "4%">Class #</th>
-                    <th width = "4%">Course</th>
-                    <th width = "5%">Course #</th>
                     <th width = "3%">Sec.</th>
                     <th width = "3%">Type</th>
                     <th width = "10%">Instructor</th>
-                    <th width = "5%">Avail.</th>
-                    <th width = "5%">Taken</th>
-                    <th width = "5%">Waiting</th>
+                    <th width = "4%">Polyrating</th>
+                    <th width = "4%">Avail.</th>
+                    <th width = "4%">Taken</th>
+                    <th width = "4%">Waiting</th>
                     <th width = "8%">Status</th>
                     <th width = "7%">Days</th>
                     <th width = "6%">Start</th>
@@ -60,14 +71,22 @@
                 </tr>
             </thead>
             <tbody>
-            ***REMOVED***% for result in group %***REMOVED***
-            ***REMOVED***% if forloop.counter|divisibleby:2 %***REMOVED***<tr class="row-white {{result.status***REMOVED******REMOVED***">{% else %***REMOVED***<tr class="row-grey {{result.status***REMOVED******REMOVED***">{% endif %***REMOVED***
+        ***REMOVED***% for subgroup in group %***REMOVED***
+                <tr><td colspan = "14"></td></tr>
+                <tr>
+                    <td colspan = "14" class = "row-class course-subtitle">{{subgroup.0.course***REMOVED******REMOVED*** {{subgroup.0.course_num***REMOVED******REMOVED*** - Systems Programming</td>
+                </tr>
+            ***REMOVED***% for result in subgroup %***REMOVED***
+            ***REMOVED***% if forloop.counter|divisibleby:2 %***REMOVED***<tr class="row-class row-white {{result.status***REMOVED******REMOVED***">{% else %***REMOVED***<tr class="row-class row-grey {{result.status***REMOVED******REMOVED***">{% endif %***REMOVED***
                     <td>{{ result.class_field ***REMOVED******REMOVED***</td>
-                    <td>{{ result.course ***REMOVED******REMOVED***</td>
-                    <td>{{ result.course_num ***REMOVED******REMOVED***</td>
                     <td>{{ result.sec_num ***REMOVED******REMOVED***</td>
                     <td>{{ result.type ***REMOVED******REMOVED***</td>
                     <td>{{ result.instructor ***REMOVED******REMOVED***</td>
+                ***REMOVED***% if result.rating %***REMOVED***
+                    <td>{{ result.rating ***REMOVED******REMOVED***</td>
+                ***REMOVED***% else %***REMOVED***
+                    <td> -- </td>
+                ***REMOVED***% endif %***REMOVED***
                     <td>{{ result.available ***REMOVED******REMOVED***</td>
                     <td>{{ result.taken ***REMOVED******REMOVED***</td>
                     <td>{{ result.waiting ***REMOVED******REMOVED***</td>
@@ -79,8 +98,10 @@
                     <td>{{ result.room ***REMOVED******REMOVED***</td>
                </tr>
            ***REMOVED***% endfor %***REMOVED***
+       ***REMOVED***% endfor %***REMOVED***
            </tbody>
         </table>
+        </div>
     ***REMOVED***% endfor %***REMOVED***
 ***REMOVED***% else %***REMOVED***
     <div id = "no-results">

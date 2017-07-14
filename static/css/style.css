@@ -29,6 +29,21 @@ body {
 	background: #2f5e42 !important;
 ***REMOVED***
 
+#id_class_department {
+	margin: 0; 
+	padding-left: 10px;
+	padding-bottom: 2px;
+	font-size: .8em;
+	list-style: none;
+***REMOVED***
+
+#department-list {
+	height: 180px;
+	background: white;
+	border: 1px solid lightgrey;
+	overflow: auto;
+***REMOVED***
+
 .Open {
 	border-left: 4px solid #408e5f;
 ***REMOVED***
@@ -44,7 +59,6 @@ body {
 #search-form {
 	margin: 10px;
 	padding: 20px;
-	margin-left: 25px;
 	background-color: #efefef;
 	border-style: solid;
 	border-color: lightgrey;
@@ -52,10 +66,7 @@ body {
 ***REMOVED***
 
 .table {
-	border-style: solid;
-	border-color: lightgrey;
-	border-width: 1px;
-    table-layout: fixed;
+	border-style: solid 1px lightgrey;
 ***REMOVED***
 
 .table td, tr {
@@ -66,14 +77,25 @@ body {
 	margin-top: 10px;
 	font-family: "Raleway";
 	color: white;
+	font-size: 1.3em;
 	background-color: #3a7d54;
 	border: solid 1px darkgreen;
-	padding: 2px;
+	padding: 4px;
+	padding-top: 10px;
 	padding-left: 10px;
+	cursor: pointer;
 ***REMOVED***
 
-.class-num {
+.course-subtitle {
+	border-left: 5px solid #dfdfdf;
+	font-size: 110%;
+	font-weight: bolder;
+	padding-bottom: 10px;
+***REMOVED***
 
+.row-class {
+	border-right: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
 ***REMOVED***
 
 .row-grey {
@@ -84,4 +106,24 @@ body {
 	padding-top: 20px;
 	font-size: 16px;
 	color: grey;
+***REMOVED***
+
+
+@media screen and (max-width:1000px***REMOVED***{
+	.table td:nth-child(1***REMOVED***, th:nth-child(1***REMOVED***,
+		   td:nth-child(13***REMOVED***, td:nth-child(14***REMOVED***, th:nth-child(13***REMOVED***, th:nth-child(14***REMOVED***{
+		display: none;
+	***REMOVED***
+	.table td {
+		max-width: 100px;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	white-space: nowrap;
+	***REMOVED***
+	.table th:nth-child(5***REMOVED*** {
+		max-width: 60px;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	white-space: nowrap;
+	***REMOVED***
 ***REMOVED***

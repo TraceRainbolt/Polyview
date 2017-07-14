@@ -8,6 +8,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+import form_data
 
 class Sections(models.Model***REMOVED***:
     class_field = models.IntegerField(db_column='class', primary_key=True***REMOVED***  # Field renamed because it was a Python reserved word.
@@ -25,6 +26,7 @@ class Sections(models.Model***REMOVED***:
     end = models.TimeField(blank=True, null=True***REMOVED***
     building = models.CharField(max_length=30, blank=True, null=True***REMOVED***
     room = models.CharField(max_length=10, blank=True, null=True***REMOVED***
+    rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True***REMOVED***
 
     class Meta:
         managed = False
