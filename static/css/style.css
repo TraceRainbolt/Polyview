@@ -29,6 +29,22 @@ body {
 	background: #2f5e42 !important;
 ***REMOVED***
 
+#search-form h3 {
+	padding: 0; 
+	margin: 0;
+	padding-bottom: 13px;
+	padding-top: -5px;
+	font-size: 1.4em;
+***REMOVED***
+
+#search-form h3:after {
+    content:' ';
+    display:block;
+    margin-top: 8px;
+    margin-bottom: -5px;
+    border: 1px solid #AAA;
+***REMOVED***
+
 #id_class_department {
 	margin: 0; 
 	padding-left: 10px;
@@ -125,5 +141,12 @@ body {
     	overflow: hidden;
     	text-overflow: ellipsis;
     	white-space: nowrap;
+	***REMOVED***
+***REMOVED***
+
+@media screen and (max-width:500px***REMOVED***{
+	.table {
+		overflow: auto;
+		overflow-y: hidden;
 	***REMOVED***
 ***REMOVED***
