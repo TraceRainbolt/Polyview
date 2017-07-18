@@ -20,7 +20,7 @@
         <a href = "#" id="polyview-brand" class = "navbar-brand">Polyview</a>
         <ul class = "nav navbar-nav navbar-left">
                 <li class = "nav-link active"><a href = "#">Home</a></li>
-                <li class><a href = "#">Sign-In</a></li>
+                <li class><a href = "/soc/login/google-oauth2/?next=/">Sign-In</a></li>
                 <li class><a href = "#">About</a></li>
         </ul>       
    </div>
@@ -50,9 +50,10 @@
     <div class = "col col-lg-9 tables-col">
 ***REMOVED***% if search_results %***REMOVED***
     ***REMOVED***% for group in search_results %***REMOVED***
-        <div>
+        <div class = "hidable-table">
+        <h3 class = "course-title"> {{ full_dep|get_item:group.0.0.course***REMOVED******REMOVED*** </h3>
+        <div class = "class-table">
         <table id = "{{ group.0.0.course ***REMOVED******REMOVED***" class = "table">
-            <h3 class = "course-title"> {{ full_dep|get_item:group.0.0.course***REMOVED******REMOVED*** </h3>
             <thead>
                 <tr class = "row-desc">
                     <th width = "4%">Class #</th>
@@ -75,7 +76,10 @@
         ***REMOVED***% for subgroup in group %***REMOVED***
                 <tr><td colspan = "14"></td></tr>
                 <tr>
-                    <td colspan = "14" class = "row-class course-subtitle">{{subgroup.0.course***REMOVED******REMOVED*** {{subgroup.0.course_num***REMOVED******REMOVED*** - Systems Programming</td>
+                    <th colspan = "14" class = "row-class course-subtitle">
+                    <input type="checkbox" class="follow"/>
+                ***REMOVED***{subgroup.0.course***REMOVED******REMOVED*** {{subgroup.0.course_num***REMOVED******REMOVED*** - {{ subgroup.0.course_combined.description ***REMOVED******REMOVED***
+                    </th>
                 </tr>
             ***REMOVED***% for result in subgroup %***REMOVED***
             ***REMOVED***% if forloop.counter|divisibleby:2 %***REMOVED***<tr class="row-class row-white {{result.status***REMOVED******REMOVED***">{% else %***REMOVED***<tr class="row-class row-grey {{result.status***REMOVED******REMOVED***">{% endif %***REMOVED***
@@ -103,6 +107,7 @@
            </tbody>
         </table>
         </div>
+        </div>
     ***REMOVED***% endfor %***REMOVED***
 ***REMOVED***% else %***REMOVED***
     <div id = "no-results">
@@ -112,6 +117,6 @@
     </div>
     </div>
 </div>
-<footer>
-</footer>
+<div id = "footer">
+</div>
 </body>

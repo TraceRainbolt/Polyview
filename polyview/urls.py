@@ -20,5 +20,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^', include('polysearch.urls'***REMOVED******REMOVED***,
+    url("^soc/", include("social.apps.django_app.urls", namespace="social"***REMOVED******REMOVED***,
     url(r'^admin/', admin.site.urls***REMOVED***,
 ***REMOVED***

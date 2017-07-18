@@ -1,9 +1,3 @@
-Operations to perform:
-  Apply all migrations: admin, auth, contenttypes, sessions
-Running migrations:
-  No migrations to apply.
-  Your models have changes that are not yet reflected in a migration, and so won't be applied.
-  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
@@ -82,6 +76,26 @@ class AuthUserUserPermissions(models.Model***REMOVED***:
         unique_together = (('user', 'permission'***REMOVED***,***REMOVED***
 
 
+class ClassDescriptions(models.Model***REMOVED***:
+    course = models.CharField(primary_key=True, max_length=10***REMOVED***
+    course_num = models.CharField(max_length=10, blank=True, null=True***REMOVED***
+    course_name = models.CharField(max_length=50, blank=True, null=True***REMOVED***
+    course_desc = models.CharField(max_length=500, blank=True, null=True***REMOVED***
+
+    class Meta:
+        managed = False
+        db_table = 'class_descriptions'
+
+
+class Descriptions(models.Model***REMOVED***:
+    course = models.CharField(primary_key=True, max_length=10***REMOVED***
+    description = models.CharField(max_length=100, blank=True, null=True***REMOVED***
+
+    class Meta:
+        managed = False
+        db_table = 'descriptions'
+
+
 class DjangoAdminLog(models.Model***REMOVED***:
     action_time = models.DateTimeField(***REMOVED***
     object_id = models.TextField(blank=True, null=True***REMOVED***
@@ -143,6 +157,7 @@ class Sections(models.Model***REMOVED***:
     building = models.CharField(max_length=30, blank=True, null=True***REMOVED***
     room = models.CharField(max_length=10, blank=True, null=True***REMOVED***
     rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True***REMOVED***
+    course_combined = models.ForeignKey(Descriptions, models.DO_NOTHING, db_column='course_combined', blank=True, null=True***REMOVED***
 
     class Meta:
         managed = False

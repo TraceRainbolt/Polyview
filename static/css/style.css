@@ -1,5 +1,7 @@
 body {
     background-color: white;
+    height: 100%;
+    min-height: 100%;
 ***REMOVED***
 
 .navbar {
@@ -81,8 +83,12 @@ body {
 	border-width: 1px;
 ***REMOVED***
 
+
 .table {
 	border-style: solid 1px lightgrey;
+	max-width: 100% !important;
+	overflow: scroll;
+	overflow-y: hidden;
 ***REMOVED***
 
 .table td, tr {
@@ -103,9 +109,9 @@ body {
 ***REMOVED***
 
 .course-subtitle {
-	border-left: 5px solid #dfdfdf;
+	border-left: 5px solid #efefef;
+	border-right: 1px solid lightgrey;
 	font-size: 110%;
-	font-weight: bolder;
 	padding-bottom: 10px;
 ***REMOVED***
 
@@ -118,18 +124,27 @@ body {
 	background-color: #efefef;
 ***REMOVED***
 
+.follow {
+***REMOVED***
+
 #no-results {
 	padding-top: 20px;
 	font-size: 16px;
 	color: grey;
 ***REMOVED***
 
+#footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 4em;
+    margin-top: 30px;
+	background: #38714e;
+***REMOVED***
+
 
 @media screen and (max-width:1000px***REMOVED***{
-	.table td:nth-child(1***REMOVED***, th:nth-child(1***REMOVED***,
-		   td:nth-child(13***REMOVED***, td:nth-child(14***REMOVED***, th:nth-child(13***REMOVED***, th:nth-child(14***REMOVED***{
-		display: none;
-	***REMOVED***
+
 	.table td {
 		max-width: 100px;
     	overflow: hidden;
@@ -142,11 +157,10 @@ body {
     	text-overflow: ellipsis;
     	white-space: nowrap;
 	***REMOVED***
-***REMOVED***
 
-@media screen and (max-width:500px***REMOVED***{
-	.table {
-		overflow: auto;
-		overflow-y: hidden;
+	.class-table {
+		width: calc(100vw - 30px***REMOVED***;
+		border: 1px solid lightgrey;
+		overflow-y: scroll;
 	***REMOVED***
 ***REMOVED***

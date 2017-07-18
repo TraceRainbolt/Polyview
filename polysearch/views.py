@@ -17,7 +17,9 @@ def get_class(request***REMOVED***:
     form = ClassForm(request.POST or None***REMOVED***
     if form.is_valid(***REMOVED***:
         search_results = find_classes(form***REMOVED***
-        context = { 'form' : form, 'search_results' : search_results, 'full_dep' : form_data.departments***REMOVED***
+        context = { 'form' : form, 
+                    'search_results' : search_results, 
+                    'full_dep' : form_data.departments ***REMOVED***
         return render(request, 'polysearch/index.html', context***REMOVED***
     return render(request, 'polysearch/index.html', {'form' : form ***REMOVED******REMOVED***
 
