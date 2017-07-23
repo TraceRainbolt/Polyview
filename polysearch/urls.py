@@ -7,5 +7,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     #url(r'^$', views.index, name='index'***REMOVED***,    
-    url(r'^$', views.get_class, name='get_class'***REMOVED***,
+    url(r'^$', views.get_classes, name='search'***REMOVED***,
 ***REMOVED***

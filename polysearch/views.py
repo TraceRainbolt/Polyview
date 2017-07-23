@@ -13,13 +13,14 @@ import form_data
 from itertools import groupby
 import form_data
 
-def get_class(request***REMOVED***:
+def get_classes(request***REMOVED***:
     form = ClassForm(request.POST or None***REMOVED***
     if form.is_valid(***REMOVED***:
-        search_results = find_classes(form***REMOVED***
+        search_results, results_count = find_classes(form***REMOVED***
         context = { 'form' : form, 
                     'search_results' : search_results, 
-                    'full_dep' : form_data.departments ***REMOVED***
+                    'full_dep' : form_data.departments,
+                    'results_count': results_count***REMOVED***
         return render(request, 'polysearch/index.html', context***REMOVED***
     return render(request, 'polysearch/index.html', {'form' : form ***REMOVED******REMOVED***
 
@@ -56,7 +57,7 @@ def parse_results(results, parameters***REMOVED***:
             results = results.filter(building__icontains=value***REMOVED***
         if key == 'rating_min' and value is not None:
             results = results.filter(rating__gte=value***REMOVED***
-    return group_by_heiarchy(results***REMOVED***
+    return group_by_heiarchy(results***REMOVED***, len(results***REMOVED***
 
 def group_by_heiarchy(results***REMOVED***:
     # This is so the template can render the courses/sections grouped properly

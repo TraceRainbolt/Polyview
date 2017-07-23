@@ -17,7 +17,7 @@ site.addsitedir('/home/webapps/polyview_env/local/lib/python2.7/site-packages'**
 sys.path.append('/home/webapps/polyview_app'***REMOVED***
 sys.path.append('/home/webapps/polyview_app/polyview'***REMOVED***
 
-os.environ['DJANGO_SETTINGS_MODULE'***REMOVED*** = 'polyview.settings'
+os.environ['DJANGO_SETTINGS_MODULE'***REMOVED*** = 'polyview.settings.production'
 
 # Activate your virtual env
 activate_env=os.path.expanduser("D:\Users\Trace\Desktop\Media\Personal\Polyview\polyview_env\Scripts\\activate_this.py"***REMOVED***

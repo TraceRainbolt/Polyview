@@ -6,12 +6,9 @@
 ***REMOVED***% load search_extras %***REMOVED***
     <meta name = "viewport" content = "width=device-width, initial-scale = 1.0"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %***REMOVED***"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %***REMOVED***"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/search-style.css' %***REMOVED***"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <body data-spy="scroll" data-target=".navbar-fixed-top" >
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %***REMOVED***"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top">
@@ -27,9 +24,19 @@
 </nav>
 <div class="container-fluid">
     <div class = "row ">
+    <div class = "row">
+        <div id = "search-header">
+            <div class = "col col-xs-7 col-sm-9 col-md-10" id = "quarter">
+                <h3>Summer Quarter</h3>
+            </div>
+            <div class = "col col-lg-1" id = "follow-container">
+                <input type="submit" id = "follow-btn" class = "btn btn-primary" value="Follow Checked" />
+            </div>
+        </div>
+    </div>
     <div class = "col col-lg-2" id = "search-form">
     <form action="/" method="post">
-        <h3>Search for classes</h3>
+        <h3>Search for classes.</h3>
     ***REMOVED***% csrf_token %***REMOVED***
     ***REMOVED***% for field in form %***REMOVED***
             <div class = "form-group">
@@ -44,11 +51,14 @@
         ***REMOVED***% endifequal %***REMOVED***
             </div>
     ***REMOVED***% endfor %***REMOVED***
-        <input type="submit" class = "btn btn-primary" value="Submit" />
+        <input type="submit" class = "btn btn-primary" value="Search" />
     </form>
     </div>
     <div class = "col col-lg-9 tables-col">
 ***REMOVED***% if search_results %***REMOVED***
+        <div id = "results-count">
+            <p>Search returned {{ results_count ***REMOVED******REMOVED*** classes.</p>
+        </div>
     ***REMOVED***% for group in search_results %***REMOVED***
         <div class = "hidable-table">
         <h3 class = "course-title"> {{ full_dep|get_item:group.0.0.course***REMOVED******REMOVED*** </h3>
@@ -72,17 +82,22 @@
                     <th width = "4%">Room</th>
                 </tr>
             </thead>
-            <tbody>
         ***REMOVED***% for subgroup in group %***REMOVED***
+            <tbody>
                 <tr><td colspan = "14"></td></tr>
                 <tr>
-                    <th colspan = "14" class = "row-class course-subtitle">
+                    <th colspan = "13" class = "row-class course-subtitle">
                     <input type="checkbox" class="follow"/>
                 ***REMOVED***{subgroup.0.course***REMOVED******REMOVED*** {{subgroup.0.course_num***REMOVED******REMOVED*** - {{ subgroup.0.course_combined.description ***REMOVED******REMOVED***
                     </th>
+                    <th class = "remove-container"><div class = "remove-btn">−</div></th>
                 </tr>
-            ***REMOVED***% for result in subgroup %***REMOVED***
-            ***REMOVED***% if forloop.counter|divisibleby:2 %***REMOVED***<tr class="row-class row-white {{result.status***REMOVED******REMOVED***">{% else %***REMOVED***<tr class="row-class row-grey {{result.status***REMOVED******REMOVED***">{% endif %***REMOVED***
+        ***REMOVED***% for result in subgroup %***REMOVED***
+            ***REMOVED***% if forloop.counter|divisibleby:2 %***REMOVED***
+                    <tr class="row-class row-toggleable row-white {{result.status***REMOVED******REMOVED***">
+            ***REMOVED***% else %***REMOVED***
+                    <tr class="row-class row-toggleable row-grey {{result.status***REMOVED******REMOVED***">
+            ***REMOVED***% endif %***REMOVED***
                     <td>{{ result.class_field ***REMOVED******REMOVED***</td>
                     <td>{{ result.sec_num ***REMOVED******REMOVED***</td>
                     <td>{{ result.type ***REMOVED******REMOVED***</td>
@@ -101,16 +116,16 @@
                     <td>{{ result.end | date:'g:i A' ***REMOVED******REMOVED***</td>
                     <td>{{ result.building ***REMOVED******REMOVED***</td>
                     <td>{{ result.room ***REMOVED******REMOVED***</td>
-               </tr>
+                </tr>
            ***REMOVED***% endfor %***REMOVED***
-       ***REMOVED***% endfor %***REMOVED***
+       ***REMOVED***% endfor %***REMOVED***
            </tbody>
         </table>
         </div>
         </div>
     ***REMOVED***% endfor %***REMOVED***
 ***REMOVED***% else %***REMOVED***
-    <div id = "no-results">
+    <div id = "results-count">
         <p>No results found.</p>
     </div>
 ***REMOVED***% endif %***REMOVED***
@@ -120,3 +135,5 @@
 <div id = "footer">
 </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %***REMOVED***"></script>
