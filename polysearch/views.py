@@ -21,8 +21,8 @@ def get_classes(request***REMOVED***:
                     'search_results' : search_results, 
                     'full_dep' : form_data.departments,
                     'results_count': results_count***REMOVED***
-        return render(request, 'polysearch/index.html', context***REMOVED***
-    return render(request, 'polysearch/index.html', {'form' : form ***REMOVED******REMOVED***
+        return render(request, 'polysearch/search.html', context***REMOVED***
+    return render(request, 'polysearch/search.html', {'form' : form ***REMOVED******REMOVED***
 
 def find_classes(form***REMOVED***:  
     parameters = {'department' : form.cleaned_data['class_department'***REMOVED***,

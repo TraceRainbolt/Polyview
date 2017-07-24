@@ -17,7 +17,6 @@
 
 ***REMOVED***
 
-
 ***REMOVED***
 # ***REMOVED***#databases
 
@@ -30,6 +29,7 @@
 ***REMOVED***
 ***REMOVED***
 
+***REMOVED***
 
 ***REMOVED***
 ***REMOVED***
@@ -50,7 +50,7 @@
 ***REMOVED***,
 ***REMOVED***
 
-# Application definition
+***REMOVED***
 
 ***REMOVED***
 ***REMOVED***
