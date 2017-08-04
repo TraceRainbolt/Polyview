@@ -56,5 +56,5 @@
 ***REMOVED***
 
 ***REMOVED***
-    'D:\Users\Trace\Desktop\Media\Personal\Polyview\polyview_app\static',
+***REMOVED***
 ***REMOVED***

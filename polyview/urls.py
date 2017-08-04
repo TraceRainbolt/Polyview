@@ -15,11 +15,13 @@ Including another URLconf
 ***REMOVED***
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.conf import settings
-from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^', include('polysearch.urls'***REMOVED******REMOVED***,
-    url("^soc/", include("social.apps.django_app.urls", namespace="social"***REMOVED******REMOVED***,
+    url(r'^$', TemplateView.as_view(template_name="polyview/home.html"***REMOVED***, name="home"***REMOVED***,
+    url(r"^soc/", include("social.apps.django_app.urls", namespace="social"***REMOVED***, name="signin"***REMOVED***,
+    url(r'^search/', include('polysearch.urls'***REMOVED***, name="search"***REMOVED***,
+    url(r'^about/', TemplateView.as_view(template_name="polyview/about.html"***REMOVED***, name="about"***REMOVED***,
+    url('^', include('django.contrib.auth.urls'***REMOVED******REMOVED***,
     url(r'^admin/', admin.site.urls***REMOVED***,
 ***REMOVED***

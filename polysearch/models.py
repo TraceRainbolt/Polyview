@@ -39,5 +39,5 @@ class Sections(models.Model***REMOVED***:
 
     class Meta:
         managed = False
-        db_table = 'sections'
+        db_table = 'fall_2017_sections'
         ordering = ['course', 'course_num', 'sec_num'***REMOVED***

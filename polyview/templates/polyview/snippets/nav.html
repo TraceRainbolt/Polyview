@@ -1,11 +1,23 @@
+<!-- Navbar template -->
 <nav class="navbar navbar-inverse navbar-static-top">
-   <!-- <a id="polyview-brand" class="<nav></nav>bar-brand" href="#">Polyview</a> -->
    <div class = "container">
-        <a href = "#" id="polyview-brand" class = "navbar-brand">Polyview</a>
+        <a href = "/" id="polyview-brand" class = "navbar-brand">Polyview</a>
         <ul class = "nav navbar-nav navbar-left">
-                <li class = "nav-link active"><a href = "#">Home</a></li>
-                <li class><a href = "/soc/login/google-oauth2/?next=/">Sign-In</a></li>
-                <li class><a href = "/about">About</a></li>
-        </ul>       
+        	  {% url 'home' as home %***REMOVED***
+  			***REMOVED***% url 'search' as search %***REMOVED***
+  			***REMOVED***% url 'about' as about %***REMOVED***
+            <li {% if request.path == home %***REMOVED*** class="active nav-link" {% else %***REMOVED*** class = "nav-link" {% endif %***REMOVED***><a href="{{ home ***REMOVED******REMOVED***">Home</a></li>
+            <li class="nav-link">
+        ***REMOVED***% if user.is_authenticated %***REMOVED***
+            <a href= "{% url 'logout' %***REMOVED***">
+            Sign-Out
+        ***REMOVED***% else %***REMOVED***
+            <a href="{% url 'social:begin' 'google-oauth2' %***REMOVED***">
+            Sign-In
+        ***REMOVED***% endif %***REMOVED***</a></li>
+            <li {% if request.path == search %***REMOVED*** class="active nav-link" {% else %***REMOVED*** class = "nav-link" {% endif %***REMOVED***><a href="{{ search ***REMOVED******REMOVED***">Search</a></li>
+            <li {% if request.path == about %***REMOVED*** class="active nav-link" {% else %***REMOVED*** class = "nav-link" {% endif %***REMOVED***><a href="{{ about ***REMOVED******REMOVED***">About</a></li>
+            <li><a>{{ user.first_name ***REMOVED******REMOVED*** {{ user.last_name ***REMOVED******REMOVED***</a></li>
+        </ul>   
    </div>
 </nav>

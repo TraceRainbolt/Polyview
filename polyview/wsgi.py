@@ -20,7 +20,7 @@ sys.path.append('/home/webapps/polyview_app/polyview'***REMOVED***
 os.environ['DJANGO_SETTINGS_MODULE'***REMOVED*** = 'polyview.settings.production'
 
 # Activate your virtual env
-activate_env=os.path.expanduser("D:\Users\Trace\Desktop\Media\Personal\Polyview\polyview_env\Scripts\\activate_this.py"***REMOVED***
+activate_env=os.path.expanduser("B:\Projects\Other Projects\Polyview\polyview_env\Scripts\\activate_this.py"***REMOVED***
 execfile(activate_env, dict(__file__=activate_env***REMOVED******REMOVED***
 
 from django.core.wsgi import get_wsgi_application
