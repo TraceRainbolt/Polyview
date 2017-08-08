@@ -23,9 +23,9 @@ ALLOWED_HOSTS = [u'www.polyview.me'***REMOVED***
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
-        'NAME': 'pass_db',
-    'USER': 'root',
-    'PASSWORD': 'ninjacps',
+***REMOVED***
+***REMOVED***
+***REMOVED***
 ***REMOVED***
 ***REMOVED***
 
