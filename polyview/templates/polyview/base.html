@@ -4,12 +4,15 @@
 ***REMOVED***% load static %***REMOVED***
 ***REMOVED***% load search_extras %***REMOVED***
 ***REMOVED***% include 'polyview/snippets/css.html' %***REMOVED***
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %***REMOVED***" />
     <meta name="google-signin-client_id" content="272699016217-7efmutvea8tjk3p4vd2usfknttlppe32.apps.googleusercontent.com">
 </head>
 <body>
 {% include 'polyview/snippets/nav.html' %***REMOVED***
 
-<div class = "content">
+{% url 'home' as home %***REMOVED***
+{% url 'search' as search %***REMOVED***
+<div  class="content" {% if request.path == home %***REMOVED*** id = "home" {% elif request.path == search %***REMOVED*** id = "search-page" {% endif %***REMOVED***>
 {% block content %***REMOVED***{% endblock content %***REMOVED***
 </div>
 
