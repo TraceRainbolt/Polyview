@@ -1,5 +1,10 @@
 
+/*Stylesheet for Polyview*/
+/*Created by Trace Rainbolt*/
+
+/*            */
 /* Global CSS */ 
+/*            */
 
 body, html {
     background-color: white;
@@ -14,7 +19,7 @@ body, html {
 .content {
 	height: 100%;
 	margin, padding: 0;
-	background-image: url("../img/default-background.png"***REMOVED***;
+	background-image: url("../img/default-background.jpg"***REMOVED***;
 	background-repeat: no-repeat;
     -webkit-background-size: auto 100%;
     -moz-background-size: auto 100%;
@@ -22,7 +27,7 @@ body, html {
     background-size: auto 100%;
     background-size: cover;
     background-attachment: fixed;
-    overflow: auto; 
+    overflow-x: hidden;
 ***REMOVED***
 
 .navbar {
@@ -58,20 +63,25 @@ body, html {
 	max-width: 100vw;
 ***REMOVED***
 
-/*#footer {
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 4em;
-    padding-top: 30px;
-	background: #3a7d54;
-	border-top: solid 3px #38714e;
+#separator {
+	margin: 0.5rem;
+	margin-top: 1rem;
+	content: "";
+	border-right: 1px white solid;
+	height: 3rem;
 ***REMOVED***
-*/
 
 /*              */
 /* Homepage CSS */
 /*              */
+
+#home h3, p {
+-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+   -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+     -o-animation: fadein 1s; /* Opera < 12.1 */
+        animation: fadein 1s;
+***REMOVED***
 
 #home h3 {
 	margin:0 auto;
@@ -153,8 +163,8 @@ body, html {
 ***REMOVED***
 
 #search-form h3:after {
-    content:' ';
-    display:block;
+    content: ' ';
+    display: block;
     margin-top: 8px;
     margin-bottom: -5px;
     border: 1px solid #AAA;
@@ -269,20 +279,47 @@ body, html {
 /*                */
 
 #text-area {
-	margin-top: 20px;
-	padding-top: 20px;
+	margin-top: 4em;
+	padding-top: 12px;
 	background: rgba(23, 23, 23, 0.4***REMOVED***;
-	height: 90vh;
-	border: 2px solid rgba(23, 23, 23, 0.3***REMOVED***;
-	border-radius: 20px;
+	height: 80rem;
+	border: 1px solid darkgrey;
+	background: rgba(220, 220, 220, 0.82***REMOVED***;
+
+	-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+	   -moz-animation: fadein 1s; /* Firefox < 16 */
+	    -ms-animation: fadein 1s; /* Internet Explorer */
+	     -o-animation: fadein 1s; /* Opera < 12.1 */
+	        animation: fadein 1s;
 ***REMOVED***
 
 #text-area h3 {
+	padding-bottom: 5px;
 	text-align: center;
-	font-family: "Raleway";
-	font-size: 5rem;
-	color: white;
-	text-shadow: -2px 2px #767571;
+	font-family: "Raleway Regular";
+	font-size: 5.4rem;
+	color: #FFF;
+	text-shadow: -2px 2px #767571, 1px -1px #767571;
+***REMOVED***
+
+#text-area  > h3::after {
+	margin: auto;
+	margin-top: 25px;
+    background-color: rgba(190, 190, 190, 0.5***REMOVED***;
+    content: "";
+    display: block;
+    height: 4px;
+    position: relative;
+    vertical-align: middle;
+    text-align: ;
+    width: 90%;
+***REMOVED***
+
+#text-area p {
+	padding-top: 3rem;
+	margin: auto;
+	width: 90%;
+	font-size: 2.2rem;
 ***REMOVED***
 
 /* Search Mobile CSS */
@@ -319,6 +356,9 @@ body, html {
 
 /* Portrait tablets and small desktops */
 @media (max-width: 991px***REMOVED*** {
+	#polyview-brand {
+		display: none;
+	***REMOVED***
 	#home h3 {
 		font-size: 7rem;
 	***REMOVED***

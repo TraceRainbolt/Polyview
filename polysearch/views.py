@@ -48,11 +48,11 @@ def parse_results(results, parameters***REMOVED***:
         if key == 'class' and value:
             results = results.filter(class_field=value***REMOVED***
         if key == 'taken' and value is not None:
-            results = results.filter(taken=value***REMOVED***
+            results = results.filter(taken__gte=value***REMOVED***
         if key == 'avail' and value is not None:
-            results = results.filter(available=value***REMOVED***
+            results = results.filter(available__gte=value***REMOVED***
         if key == 'wait' and value is not None:
-            results = results.filter(waiting=value***REMOVED***
+            results = results.filter(waiting__gte=value***REMOVED***
         if key == 'building' and value:
             results = results.filter(building__icontains=value***REMOVED***
         if key == 'rating_min' and value is not None:
