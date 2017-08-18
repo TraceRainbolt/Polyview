@@ -1,9 +1,12 @@
 from django import forms
-from models import Sections
+from .models import Sections
 import form_data
 
-class ClassForm(forms.Form***REMOVED***:
+class CourseForm(forms.Form***REMOVED***:
     class_department = forms.MultipleChoiceField(label='Department:',choices=form_data.department_choices, widget = forms.CheckboxSelectMultiple, required=False***REMOVED***
+    class_area = forms.MultipleChoiceField(label='GE Area:',choices=form_data.area_choices, widget = forms.CheckboxSelectMultiple, required=False***REMOVED***
+
+class SectionForm(forms.Form***REMOVED***:
     class_instructor = forms.CharField(label='Instructor name:', max_length=50,required=False***REMOVED***
     class_status = forms.ChoiceField(label='Class status:',choices=form_data.status_choices, required=False***REMOVED***
     class_field = forms.IntegerField(label='Class #:',max_value=9999,required=False***REMOVED***

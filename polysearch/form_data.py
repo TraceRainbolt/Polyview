@@ -14,6 +14,7 @@ department_choices = (
     ('AEPS', 'AEPS-Ag and Environmental Plant Sci'***REMOVED***,
     ('AERO','AERO-Aerospace Engineering'***REMOVED***,
     ('AGB','AGB-Agribusiness'***REMOVED***,
+    ('AG','AG-Agriculture'***REMOVED***,
     ('AGC','AGC-Agricultural Communication'***REMOVED***,
     ('AGED','AGED-Agricultural Education'***REMOVED***,
     ('ANT','ANT-Anthropology'***REMOVED***,
@@ -24,14 +25,17 @@ department_choices = (
     ('ASTR','ASTR-Astronomy'***REMOVED***,
     ('BIO','BIO-Biology'***REMOVED***,
     ('BMED','BMED-Biomedical Engineering'***REMOVED***,
+    ('BOT','BOT-Botany'***REMOVED***,
     ('BRAE','BRAE-BioResource & Agricultural Eng'***REMOVED***,
     ('BUS','BUS-Business'***REMOVED***,
     ('CD','CD-Child Development'***REMOVED***,
     ('CE','CE-Civil Engineering'***REMOVED***,
     ('CHEM','CHEM-Chemistry'***REMOVED***,
+    ('CHIN','CHIN-Chinese'***REMOVED***,
     ('CM','CM-Construction Management'***REMOVED***,
     ('COMS','COMS-Communication Studies'***REMOVED***,
     ('CPE','CPE-Computer Engineering'***REMOVED***,
+    ('CRP','CRP-City and Regional Planning'***REMOVED***,
     ('CSC','CSC-Computer Science'***REMOVED***,
     ('DSCI','DSCI-Dairy Science'***REMOVED***,
     ('ECON','ECON-Economics'***REMOVED***,
@@ -76,6 +80,34 @@ department_choices = (
 
 # Convert to dict for display purposes. (Tuple is required for django choices***REMOVED***
 departments = dict([[x.split('-'***REMOVED*** for x in choice***REMOVED***[1***REMOVED*** for choice in department_choices***REMOVED******REMOVED***
+
+ge_areas = ['Show all GE',
+            'B2B4-Gen Ed Areas B2 & B4',
+            'B3B4-Gen Ed Areas B3 & B4',
+            'GE-General Education',
+            'GEA1-General Educ Area A1',
+            'GEA2-General Educ Area A2',
+            'GEA3-General Educ Area A3',
+            'GEB1-General Educ Area B1',
+            'GEB2-General Educ Area B2',
+            'GEB3-General Educ Area B3',
+            'GEB4-General Educ Area B4',
+            'GEB5-General Educ Area B5',
+            'GEB6-General Educ Area B6',
+            'GEC-General Educ Area C',
+            'GEC1-General Educ Area C1',
+            'GEC2-General Educ Area C2',
+            'GEC3-General Educ Area C3',
+            'GEC4-General Educ Area C4',
+            'GEC5-General Educ Area C5',
+            'GED1-General Educ Area D1',
+            'GED2-General Educ Area D2',
+            'GED3-General Educ Area D3',
+            'GED4-General Educ Area D4',
+            'GED5-General Educ Area D5',
+            'GEF-General Educ Area F***REMOVED***'***REMOVED***
+
+area_choices = zip(ge_areas, ge_areas***REMOVED***
 
 
 # No longer needed due to list comprehension.

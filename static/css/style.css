@@ -15,6 +15,9 @@ body, html {
     padding: 0px;
     overflow-x: hidden; 
 ***REMOVED***
+li {
+    list-style: none;
+***REMOVED***
 
 .content {
 	height: 100%;
@@ -28,6 +31,7 @@ body, html {
     background-size: cover;
     background-attachment: fixed;
     overflow-x: hidden;
+    overflow-y: hidden;
 ***REMOVED***
 
 .navbar {
@@ -57,10 +61,6 @@ body, html {
 
 .nav .active a:hover {
 	background: #38714e !important;
-***REMOVED***
-
-.row {
-	max-width: 100vw;
 ***REMOVED***
 
 #separator {
@@ -100,25 +100,46 @@ body, html {
 	padding-top: 2em;
 	text-align: center;
 	font-family: "Raleway";
-	font-size: 3.4rem;
+	font-size: 3.6rem;
 	color: #f9faf3;
 	text-shadow: -2px 2px #767571, 0 0 12px #101010;
 ***REMOVED***
 
 #home-points {
 	position: relative;
-    top: 30%;
+    top: 25%;
     transform: translateY(-50%***REMOVED***;
+***REMOVED***
+
+/*                 */
+/* Follow Page CSS */
+/*                 */
+
+
+#followed h3 {
+	margin: auto;
+	margin-top: 3em;
+	padding: 12px;
+	background: rgba(23, 23, 23, 0.4***REMOVED***;
+	border: 1px solid darkgrey;
+	background: rgba(220, 220, 220, 0.82***REMOVED***;
+	width: 120rem;
 ***REMOVED***
 
 /*                 */
 /* Search Page CSS */
 /*                 */
 
+#search-page {
+	background-image: none;
+	height: auto;
+***REMOVED***
+
 #search-header {
 	margin-right: -15px;
 	padding-left: 3vw;
-	height: 50px;
+	height: 5rem;
+	width:100%;;
 	background: #efefef;
 	border-bottom: 1px solid lightgrey;
 ***REMOVED***
@@ -126,22 +147,33 @@ body, html {
 #search-header h3 {
 	margin: 0;
 	padding: 0;
+	width: 20rem;
 	margin-top: 13px;
 	font-size:1.7em;
 ***REMOVED***
 
-#follow-container {
+#quarter {
+    padding: 0;
+	float: left;
+***REMOVED***
+
+.btn-container {
 	padding-top: 7px;
 ***REMOVED***
 
+.btn-container form div {
+	display:inline-block;
+***REMOVED***
+
+
 #results-count {
 	padding: 0 7px;
-	margin-top: -3px;
 ***REMOVED***
 
 #search-form {
-	margin: 10px;
-	padding: 20px;
+	margin: 0;
+	margin-top: 20px;
+	padding: 18px;
 	background-color: rgba(239, 239, 239, .7***REMOVED***;
 	border-style: solid;
 	border-color: darkgrey;
@@ -171,22 +203,33 @@ body, html {
 ***REMOVED***
 
 .form-group {
-	margin: 4px;
+	margin: 2px;
 ***REMOVED***
 
-#id_class_department {
+
+.department-list {
+	margin: 0;
+	height: 180px;
+    background: #fefefe;
+    border: 1px solid lightgrey;
+	overflow: auto;
+***REMOVED***
+
+#id_class_department, #id_class_area {
 	margin: 0; 
-	padding-left: 10px;
+	padding-left: 4px;
 	padding-bottom: 2px;
 	font-size: .8em;
-	list-style: none;
 ***REMOVED***
 
-#department-list {
-	height: 180px;
-	background: white;
-	border: 1px solid lightgrey;
-	overflow: auto;
+.add-btn {
+	border-right: 1px solid lightgrey;
+***REMOVED***
+
+.select-btn {
+	line-height: 6px;
+	vertical-align: middle;
+	height: 25px;
 ***REMOVED***
 
 .Open {
@@ -206,17 +249,20 @@ body, html {
 	height: 36px;
 
 	border-radius: 3px;
-	margin-bottom: -10px;
+	margin-bottom: 10px;
 	margin-top: 10px;
 ***REMOVED***
 
-.table {
-	max-width: 100% !important;
-	overflow: scroll;
-	overflow-y: hidden;
+.table-col {
+	margin-top: 20px;
+***REMOVED***
+
+.class-table {
+	overflow: auto;
 ***REMOVED***
 
 .table td, tr {
+	border-collapse: separate; 
 	white-space: nowrap; overflow: hidden; text-overflow:ellipsis;
 ***REMOVED***
 
@@ -240,7 +286,10 @@ body, html {
 ***REMOVED***
 
 .remove-container {
-	border-right: 1px solid lightgrey;
+	background-color: white;
+         box-shadow:inset -2px 0px 0px -1px lightgrey;
+    -moz-box-shadow:inset -2px 0px 0px -1px lightgrey;
+         box-shadow:inset -2px 0px 0px -1px lightgrey;
 	border-bottom: 1px solid lightgrey;
 ***REMOVED***
 
@@ -251,27 +300,54 @@ body, html {
 	text-shadow: lightblue 0 0 6px;
 	cursor: pointer;
 ***REMOVED***
+.row-desc {
+	background-color: white;
+***REMOVED***
 
 .row-class {
 	border-bottom: 1px solid lightgrey;
 ***REMOVED***
 
 .row-grey {
-	border-right: 1px solid lightgrey;
+         box-shadow:inset -2px 0px 0px -1px lightgrey;
+    -moz-box-shadow:inset -2px 0px 0px -1px lightgrey;
+         box-shadow:inset -2px 0px 0px -1px lightgrey;
 	background-color: #efefef;
 ***REMOVED***
 
 .row-white {
-    border-right: 1px solid lightgrey;
+         box-shadow:inset -2px 0px 0px -1px lightgrey;
+    -moz-box-shadow:inset -2px 0px 0px -1px lightgrey;
+         box-shadow:inset -2px 0px 0px -1px lightgrey;
 ***REMOVED***
 
 
 #results-count {
-	padding: 0;
-	padding-top: 12px;
-	margin-bottom: -32px;
+    display: inline-block;
+	padding-top: 2.7rem;
 	font-size: 16px;
 	color: grey;
+***REMOVED***
+
+.section-element {
+	padding-bottom: 1em;
+***REMOVED***
+
+/* Section Search */
+
+.followed-classes {
+    max-height: 200px;
+    overflow: auto;
+    background: #fefefe;
+    border: 1px solid lightgrey;
+***REMOVED***
+
+.followed-classes ul {
+    padding: 0 6px;
+***REMOVED***
+
+.followed-classes a {
+    cursor: pointer;
 ***REMOVED***
 
 /*                */
@@ -309,7 +385,6 @@ body, html {
     content: "";
     display: block;
     height: 4px;
-    position: relative;
     vertical-align: middle;
     text-align: ;
     width: 90%;
@@ -334,6 +409,10 @@ body, html {
 		background-image: none;
 	***REMOVED***
 
+    #results-count {
+        padding-top: 1.8rem;
+***REMOVED***
+
 	.table td {
 		max-width: 100px;
     	overflow: hidden;
@@ -348,7 +427,6 @@ body, html {
 	***REMOVED***
 
 	.class-table {
-		width: calc(100vw - 30px***REMOVED***;
 		border: 1px solid lightgrey;
 		overflow-x: scroll;
 	***REMOVED***
@@ -368,12 +446,25 @@ body, html {
 	#search-header h3 {
 		padding: 5px 0;
 		font-size: 1.3em;
-		margin-left: 6px;
 	***REMOVED***
+***REMOVED***
 
-	.col-xs-7  {
-		margin-right: -18px;
-	***REMOVED***
+@media (max-width: 766px***REMOVED*** {
+    #separator {
+        display: none;
+***REMOVED***
+    #search-header {
+        height: 10rem;
+***REMOVED***
+***REMOVED***
+
+@media (max-width: 427px***REMOVED*** {
+    #separator {
+        display: none;
+***REMOVED***
+    #search-header {
+        height: 15rem;
+***REMOVED***
 ***REMOVED***
 
 
