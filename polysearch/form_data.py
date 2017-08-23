@@ -10,6 +10,7 @@ status_choices = (
     (CANCELLED, 'Cancelled'***REMOVED***,
 ***REMOVED***
 
+#TODO: Add the rest
 department_choices = (
     ('AEPS', 'AEPS-Ag and Environmental Plant Sci'***REMOVED***,
     ('AERO','AERO-Aerospace Engineering'***REMOVED***,

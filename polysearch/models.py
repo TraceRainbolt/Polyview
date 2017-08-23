@@ -41,6 +41,7 @@ class Sections(models.Model***REMOVED***:
     building = models.CharField(max_length=30, blank=True, null=True***REMOVED***
     room = models.CharField(max_length=10, blank=True, null=True***REMOVED***
     rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True***REMOVED***
+    sec_group = models.SmallIntegerField(***REMOVED***
 
     def __unicode__(self***REMOVED***:
         return ('{***REMOVED*** {***REMOVED***'***REMOVED***.format(self.course_id.course_ac, self.course_id.course_num***REMOVED***

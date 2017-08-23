@@ -11,15 +11,14 @@ $(document***REMOVED***.ready(function(***REMOVED*** {
         else
             $(this***REMOVED***.children(***REMOVED***.eq(0***REMOVED***.text("−"***REMOVED***;
 ***REMOVED******REMOVED***;
-***REMOVED******REMOVED***
 
-$(".select-btn"***REMOVED***.click(function(e***REMOVED*** {
+    $(".select-btn"***REMOVED***.click(function(e***REMOVED*** {
     var btn = $(this***REMOVED***;
     var course_id = $(this***REMOVED***.val(***REMOVED***;
     var course_name = $(this***REMOVED***.data("name"***REMOVED***;
     var followed_list = $(".followed-list"***REMOVED***;
     btn.prop('disabled', true***REMOVED***;
-    addSectionToList(course_name, course_id***REMOVED***;
+    addCourseToList(course_name, course_id***REMOVED***;
 
     e.preventDefault(***REMOVED***;
     $.ajax({
@@ -37,6 +36,7 @@ $(".select-btn"***REMOVED***.click(function(e***REMOVED*** {
     ***REMOVED***
 ***REMOVED******REMOVED***;
 ***REMOVED******REMOVED***;
+***REMOVED******REMOVED***
 
 $(".followed-list"***REMOVED***.on('click', '.remove-class', function(e***REMOVED*** {
     var rm_class = $(this***REMOVED***.closest('li'***REMOVED***;
@@ -58,15 +58,70 @@ $(".followed-list"***REMOVED***.on('click', '.remove-class', function(e***REMOVE
         success: function(data***REMOVED*** {
     ***REMOVED***,
         error: function(result***REMOVED*** {
-            addSectionToList(course_name, course_id***REMOVED***;
+            addCourseToList(course_name, course_id***REMOVED***;
             select_btn.prop('disabled', true***REMOVED***;
             console.log("There was an error removing the selected course."***REMOVED***
     ***REMOVED***
 ***REMOVED******REMOVED***;
 ***REMOVED******REMOVED***;
 
-function addSectionToList(course_name, course_id***REMOVED*** {
+$(".table-col"***REMOVED***.on('click', '.add-checkbox', function(e***REMOVED*** {
+    if(this.checked***REMOVED***{
+        var class_num = $(this***REMOVED***.data("class-num"***REMOVED***;
+        addSection(this, class_num***REMOVED***;
+***REMOVED*** else {
+        var class_num = $(this***REMOVED***.data("class-num"***REMOVED***;
+        removeSection(this, class_num***REMOVED***;
+***REMOVED***
+***REMOVED******REMOVED***;
+
+function addSection(box, class_num***REMOVED***{
+    $.ajax({
+        type: "POST",
+        url: "/search/ajax/add_section/",
+        data: { 
+            'class_num' : class_num
+    ***REMOVED***,
+        dataType: 'json',
+        success: function(data***REMOVED*** {
+            console.log("Successfully added section."***REMOVED***
+    ***REMOVED***,
+        error: function(result***REMOVED*** {
+            box.checked = false;
+            console.log("There was an error adding the selected section."***REMOVED***
+    ***REMOVED***
+***REMOVED******REMOVED***;
+***REMOVED***
+
+function removeSection(box, class_num***REMOVED***{
+    $.ajax({
+        type: "POST",
+        url: "/search/ajax/remove_section/",
+        data: { 
+            'class_num' : class_num
+    ***REMOVED***,
+        dataType: 'json',
+        success: function(data***REMOVED*** {
+            console.log("Successfully added section."***REMOVED***
+    ***REMOVED***,
+        error: function(result***REMOVED*** {
+            box.checked = true;
+            console.log("There was an error removing the selected section."***REMOVED***
+    ***REMOVED***
+***REMOVED******REMOVED***;
+***REMOVED***
+
+function addCourseToList(course_name, course_id***REMOVED*** {
     var followed_list = $(".followed-list"***REMOVED***;
     var li_html = '<li><h6>' + course_name + ' <a class = "remove-class" data-id=' + course_id + '>Remove</a>';
     followed_list.append(li_html***REMOVED***;
 ***REMOVED***
+
+
+
+
+// var href = 'https://pass.calpoly.edu/addCourse.json?courseId=' + course_id;
+// var wnd = window.open(href***REMOVED***;
+// setTimeout(function(***REMOVED***{
+//     wnd.close(***REMOVED***;
+// ***REMOVED***, 100***REMOVED***;

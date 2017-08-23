@@ -1,9 +1,44 @@
 {% extends "polyview/base.html" %***REMOVED***
 {% block content %***REMOVED***
-<div id = "title-mask"></div>
-<div id = "home-points">
-    <h3>Polyview</h3>
-	<p>Easily find the classes you want with advanced search features</p>
-	<p>Get instant emails when sections you follow add or remove classes</p>
+<div  class = "container-fluid"  id = "home">
+  <div class = "row">
+    <div id = "background-band">
+      <div id = "band-content">
+        <h3>Polyview</h3>
+      </div>
+    </div>
+  <div id = "home-buttons">
+    <button class = "btn btn-primary">Sign-In</button>
+    <button class = "btn btn-primary">Search for Classes</button>
+  </div>
+  </div>
+  <div class = "row" id = "home-content">
+      <div id = "info-cols">
+        <div class = "col col-lg-6 col-sm-12">
+            <div class = "home-info home-info-left">
+                <h2>What can it do?</h2>
+                <p>Polyview is a very powerful website. Here are a couple of the features it supports:</p>
+                <ul>
+                    <li>Search for classes by Polyrating.</li>
+                    <li>Get instant e-mails when courses add sections.</li>
+                    <li>Advanced scheduling options.</li>
+                    <li>And much more!</li>
+                </ul>
+            </div>
+        </div>
+        <div class = "col col-lg-6 col-sm-12">
+            <div class = "home-info home-info-right">
+                <h2>How does it work?</h2>
+                <p>Using polyview is simple.</p>
+                <ul>
+                    <li>Sign-In if you want to save your courses.</li>
+                    <li>Find the courses you want.</li>
+                    <li>Search through the possible schedules.</li>
+                    <li>Access your saved courses through your account.</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+  </div>
 </div>
 {% endblock content %***REMOVED***
