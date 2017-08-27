@@ -1,5 +1,63 @@
 {% extends "polysearch/search_base.html" %***REMOVED***
 {% load widget_tweaks %***REMOVED***
+
 {% block results %***REMOVED***
-HELLO THERE
+{% for schedule in search_results %***REMOVED***
+<div class = "hidable-table">
+    <h3 class = "course-title">Schedule {{ forloop.counter ***REMOVED******REMOVED***</h3>
+    <div class = "class-table">
+        <table class = "table table-striped">
+            <thead>
+                <tr class = "row-desc">
+                    <th width = "4%">Class #</th>
+                    <th width = "3%">Sec.</th>
+                    <th width = "3%">Type</th>
+                    <th width = "10%">Instructor</th>
+                    <th width = "4%">Polyrating</th>
+                    <th width = "4%">Avail.</th>
+                    <th width = "4%">Taken</th>
+                    <th width = "4%">Waiting</th>
+                    <th width = "8%">Status</th>
+                    <th width = "7%">Days</th>
+                    <th width = "6%">Start</th>
+                    <th width = "6%">End</th>
+                    <th width = "11%">Building</th>
+                    <th width = "4%">Room</th>
+                </tr>
+            </thead>    
+        ***REMOVED***% for section in schedule %***REMOVED***
+                <tr class="row-class row-toggleable {{section.status***REMOVED******REMOVED***">
+                    <td>{{ section.class_field ***REMOVED******REMOVED***</td>
+                    <td>{{ section.sec_num ***REMOVED******REMOVED***</td>
+                    <td>{{ section.type ***REMOVED******REMOVED***</td>
+                    <td>{{ section.instructor ***REMOVED******REMOVED***</td>
+                ***REMOVED***% if  section.rating %***REMOVED***
+                    <td>{{ section.rating ***REMOVED******REMOVED***</td>
+                ***REMOVED***% else %***REMOVED***
+                    <td> -- </td>
+                ***REMOVED***% endif %***REMOVED***
+                    <td>{{ section.available ***REMOVED******REMOVED***</td>
+                    <td>{{ section.taken ***REMOVED******REMOVED***</td>
+                    <td>{{ section.waiting ***REMOVED******REMOVED***</td>
+                    <td>{{ section.status ***REMOVED******REMOVED***</td>
+                    <td>{{ section.days ***REMOVED******REMOVED***</td>
+                    <td>{{ section.start | date:'g:i A' ***REMOVED******REMOVED***</td>
+                    <td>{{ section.end | date:'g:i A' ***REMOVED******REMOVED***</td>
+                    <td>{{ section.building ***REMOVED******REMOVED***</td>
+                    <td>{{ section.room ***REMOVED******REMOVED***</td>
+                </tr>
+        ***REMOVED***% endfor %***REMOVED***
+        </table>
+    </div>
+</div>
+{% endfor %***REMOVED***
 {% endblock results %***REMOVED***
+
+{% block buttons %***REMOVED***
+<form action="/search/" method="post">
+***REMOVED***% csrf_token %***REMOVED***
+    <div>
+        <input type="submit" class = "btn btn-secondary" value="Choose Sections" name = "section-search" />
+    </div>
+</form>
+{% endblock buttons %***REMOVED***

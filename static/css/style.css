@@ -100,7 +100,7 @@ li {
 
 #background-band {
     padding-top: 6.8rem;
-    height: 30rem;
+    height: 42rem;
 ***REMOVED***
 
 #band-content {
@@ -159,18 +159,37 @@ li {
 
 #home-content {
     height: 100%;
+    display: flex;
     margin-top: 7rem;
     background: #eee;
 ***REMOVED***
 
-.info-cols {
-    height: auto;
-***REMOVED***
-
 .home-info {
-    margin-top: 4rem;
+    position:relative;
+    flex: 1;
+    flex-direction: row;
+    height: 68rem;
+    margin: 8rem 3rem  0;
     background: white;
     border-top: 5px solid #38714e;
+***REMOVED***
+
+#home-gears {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 0.5rem;
+    height: 20%;
+    text-align: center;
+***REMOVED***
+
+#home-question {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 0.5rem;
+    height: 20%;
+    text-align: center;
 ***REMOVED***
 
 .home-info h2 {
@@ -181,13 +200,14 @@ li {
 ***REMOVED***
 
 .home-info p {
-    padding: 1rem 3rem;
+    padding: 1rem 5rem;
     font-size: 1.8rem;
     color: #777;
 ***REMOVED***
 
 .home-info ul {
     padding-left: 6rem;
+    padding-bottom: 5rem;
 ***REMOVED***
 
 .home-info li {
@@ -198,12 +218,35 @@ li {
 ***REMOVED***
 
 .home-info-left {
-    margin-left: 18rem;
+    margin-left: 16%;
 ***REMOVED***
 
 .home-info-right {
-    margin-right: 18rem;
+    margin-right: 16%;
 ***REMOVED***
+
+.home-info-btn {
+    position: absolute;
+    bottom:  2rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    display : block;
+    height: 4rem;
+    width: 18rem;
+    font-size: 1.2em;
+    color: #38714e;
+    background-color: white;
+    border-color: #38714e;
+***REMOVED***
+
+.home-info-btn:hover {
+    color: #38714e;
+    background-color: white;
+    border-color: #38714e;
+***REMOVED***
+
 
 
 /*                 */
@@ -292,13 +335,6 @@ li {
 	padding-bottom: 13px;
 	padding-top: 3px;
 	font-size: 1.24em;
-***REMOVED***
-
-#search-form h3:after {
-    content: ' ';
-    margin-top: 8px;
-    margin-bottom: -5px;
-    border: 1px solid #AAA;
 ***REMOVED***
 
 .form-group {
@@ -511,18 +547,15 @@ li {
 
 /* Landscape tablets and medium desktops */
 @media (max-width: 1199px***REMOVED*** {
+     #home-content {
+        flex-direction: column;
+        height: 200rem;
+ ***REMOVED***
 
     .home-info {
-        height: auto;
-***REMOVED***
-
-    .home-info-left {
-            margin-left: 0;
-***REMOVED***
-
-    .home-info-right {
-            margin-right: 0;
-***REMOVED***
+        flex-direction: row;
+        margin: 5rem;
+ ***REMOVED***
 
 	.content {
     	background-attachment: scroll;
@@ -549,6 +582,13 @@ li {
 
 /* Portrait tablets and small desktops */
 @media (max-width: 460px***REMOVED*** {
+    #home-content {
+        margin: 0;
+***REMOVED***
+    .home-info {
+        flex-direction: row;
+        margin: 0;
+ ***REMOVED***
     #home h3 {
         font-size: 6rem;
 ***REMOVED***

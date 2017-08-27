@@ -1,6 +1,7 @@
 {% extends "polyview/base.html" %***REMOVED***
+{% load static %***REMOVED***
 {% block content %***REMOVED***
-<div  class = "container-fluid"  id = "home">
+<div id = "home">
   <div class = "row">
     <div id = "background-band">
       <div id = "band-content">
@@ -12,33 +13,31 @@
     <button class = "btn btn-primary">Search for Classes</button>
   </div>
   </div>
-  <div class = "row" id = "home-content">
-      <div id = "info-cols">
-        <div class = "col col-lg-6 col-sm-12">
-            <div class = "home-info home-info-left">
-                <h2>What can it do?</h2>
-                <p>Polyview is a very powerful website. Here are a couple of the features it supports:</p>
-                <ul>
-                    <li>Search for classes by Polyrating.</li>
-                    <li>Get instant e-mails when courses add sections.</li>
-                    <li>Advanced scheduling options.</li>
-                    <li>And much more!</li>
-                </ul>
-            </div>
-        </div>
-        <div class = "col col-lg-6 col-sm-12">
-            <div class = "home-info home-info-right">
-                <h2>How does it work?</h2>
-                <p>Using polyview is simple.</p>
-                <ul>
-                    <li>Sign-In if you want to save your courses.</li>
-                    <li>Find the courses you want.</li>
-                    <li>Search through the possible schedules.</li>
-                    <li>Access your saved courses through your account.</li>
-                </ul>
-            </div>
-        </div>
-      </div>
+  <div id = "home-content">
+    <div class = "home-info home-info-left">
+      <img id = "home-gears" src = "{% static 'img/home-mark.png' %***REMOVED***">
+      <h2>What can it do?</h2>
+      <p>Polyview is a very powerful website. Here are a couple of the features it supports:</p>
+      <ul>
+        <li>Search for classes by Polyrating.</li>
+        <li>Get instant e-mails when courses add sections.</li>
+        <li>Advanced scheduling options.</li>
+        <li>And much more!</li>
+      </ul>
+      <button class = "btn btn-primary home-info-btn">Learn More</button>
+    </div>
+    <div class = "home-info home-info-right">
+      <img id = "home-gears" src = "{% static 'img/home-gears.png' %***REMOVED***">
+      <h2>How does it work?</h2>
+      <p>Using polyview is simple. Follow these steps to get started:</p>
+      <ul>
+        <li>Sign-In if you want to save your courses.</li>
+        <li>Find the courses you want.</li>
+        <li>Search through the possible schedules.</li>
+        <li>Access your saved courses through your account.</li>
+      </ul>
+      <button class = "btn btn-primary home-info-btn">Get Started</button>
+    </div>
   </div>
 </div>
 {% endblock content %***REMOVED***
