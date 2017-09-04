@@ -1,32 +1,30 @@
 <!-- Navbar template -->
-<nav class="navbar navbar-inverse navbar-static-top">
-   <div class = "container">
-        <a href = "/" id="polyview-brand" class = "navbar-brand">Polyview</a>
-        <ul class = "nav navbar-nav navbar-left">
-        	{% url 'home' as home %***REMOVED***
-        ***REMOVED***% url 'followed' as followed %***REMOVED***
-  		***REMOVED***% url 'search' as search %***REMOVED***
-  			{% url 'about' as about %***REMOVED***
-            <li {% if request.path == home %***REMOVED*** class="active nav-link" {% else %***REMOVED*** class = "nav-link" {% endif %***REMOVED***><a href="{{ home ***REMOVED******REMOVED***">Home</a></li>
-            <li {% if request.path == followed %***REMOVED*** class="active nav-link" {% else %***REMOVED*** class = "nav-link" {% endif %***REMOVED***>
-        ***REMOVED***% if user.is_authenticated %***REMOVED***
-            <a href="{% url 'followed' %***REMOVED***">Followed</a>
+<nav class="navbar">
+    <a href = "/" id="polyview-brand">Polyview</a>
+    <ul>
+    	{% url 'home' as home %***REMOVED***
+    ***REMOVED***% url 'followed' as followed %***REMOVED***
+		***REMOVED***% url 'search' as search %***REMOVED***
+			{% url 'about' as about %***REMOVED***
+        <li {% if request.path == home %***REMOVED*** class="active" {% endif %***REMOVED***><a href="{{ home ***REMOVED******REMOVED***">Home</a></li>
+        <li {% if request.path == followed %***REMOVED*** class="active" {% endif %***REMOVED***>
+    ***REMOVED***% if user.is_authenticated %***REMOVED***
+        <a href="{% url 'followed' %***REMOVED***">Account</a>
+    ***REMOVED***% else %***REMOVED***
+        <a href="{% url 'social:begin' 'google-oauth2' %***REMOVED***">
+        Sign-In
+    ***REMOVED***% endif %***REMOVED***</a></li>
+        <li {% if request.path == search %***REMOVED*** class="active" {% endif %***REMOVED***><a href="{{ search ***REMOVED******REMOVED***">Search</a></li>
+        <li {% if request.path == about %***REMOVED*** class="active" {% endif %***REMOVED***><a href="{{ about ***REMOVED******REMOVED***">About</a></li>
+    ***REMOVED***% if user.is_authenticated %***REMOVED***
+        <li id = "separator"></li>
+        <li><a href= "{% url 'logout' %***REMOVED***">Sign-Out &nbsp;
+        ***REMOVED***% if user.first_name %***REMOVED***
+            <small>({{ user.first_name ***REMOVED******REMOVED*** {{ user.last_name ***REMOVED******REMOVED******REMOVED***</small>
         ***REMOVED***% else %***REMOVED***
-            <a href="{% url 'social:begin' 'google-oauth2' %***REMOVED***">
-            Sign-In
-        ***REMOVED***% endif %***REMOVED***</a></li>
-            <li {% if request.path == search %***REMOVED*** class="active nav-link" {% else %***REMOVED*** class = "nav-link" {% endif %***REMOVED***><a href="{{ search ***REMOVED******REMOVED***">Search</a></li>
-            <li {% if request.path == about %***REMOVED*** class="active nav-link" {% else %***REMOVED*** class = "nav-link" {% endif %***REMOVED***><a href="{{ about ***REMOVED******REMOVED***">About</a></li>
-        ***REMOVED***% if user.is_authenticated %***REMOVED***
-            <li id = "separator"></li>
-            <li class="nav-link"><a href= "{% url 'logout' %***REMOVED***">Sign-Out &nbsp;
-            ***REMOVED***% if user.first_name %***REMOVED***
-                <small>({{ user.first_name ***REMOVED******REMOVED*** {{ user.last_name ***REMOVED******REMOVED******REMOVED***</small>
-            ***REMOVED***% else %***REMOVED***
-                <small>({{ user ***REMOVED******REMOVED******REMOVED***</small>
-            ***REMOVED***% endif %***REMOVED***
-            </a></li>
+            <small>({{ user ***REMOVED******REMOVED******REMOVED***</small>
         ***REMOVED***% endif %***REMOVED***
-        </ul>   
-   </div>
+        </a></li>
+    ***REMOVED***% endif %***REMOVED***
+    </ul>   
 </nav>

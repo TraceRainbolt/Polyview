@@ -5,11 +5,11 @@
     <h3>Search for sections.</h3>
     <h5>Followed classes:</h5>
     <div class = "followed-classes">
-    <ul class = "followed-list">
-***REMOVED***% for followed in user_followed_names %***REMOVED***
-        <li><h6> {{ followed.course_ac ***REMOVED******REMOVED*** {{ followed.course_num ***REMOVED******REMOVED*** <a class = "remove-class" data-id= "{{ followed.data_id ***REMOVED******REMOVED***">Remove</a></h6></li>
-***REMOVED***% endfor %***REMOVED***
-    </ul>
+        <ul class = "followed-list">
+    ***REMOVED***% for followed in user_followed_names %***REMOVED***
+            <li><span> {{ followed.course_ac ***REMOVED******REMOVED*** {{ followed.course_num ***REMOVED******REMOVED*** <a class = "remove-class" data-id= "{{ followed.data_id ***REMOVED******REMOVED***">Remove</a></span></li>
+    ***REMOVED***% endfor %***REMOVED***
+        </ul>
     </div>
 ***REMOVED***% csrf_token %***REMOVED***
 ***REMOVED***% for field in form %***REMOVED***
@@ -25,8 +25,7 @@
     ***REMOVED***% endif %***REMOVED***
     </div>
 ***REMOVED***% endfor %***REMOVED***
-    <br>
-    <input type="submit" class = "btn btn-primary" value="Find Sections" name = "course-search"/>
+    <input type="submit" class = "btn btn-search" value="Find Sections" name = "course-search"/>
 </form>
 {% endblock form %***REMOVED***
 
@@ -36,26 +35,25 @@
 <div class = "hidable-table">
     <h3 class = "course-title"> {{ full_dep|get_item:course.0.course_ac ***REMOVED******REMOVED*** </h3>
     <div class = "class-table">
-    <div class = "overflow-table">
-    <table class = "table table-striped">
-***REMOVED***% for section in course %***REMOVED***
-    <tr class = "section-element">
-        <th class = "row-course" colspan="0">
-        ***REMOVED***{section.course_ac***REMOVED******REMOVED*** {{section.course_num***REMOVED******REMOVED*** - {{ section.course_description ***REMOVED******REMOVED*** <small>({{ section.units ***REMOVED******REMOVED*** units***REMOVED***</small>
-        </th>
-        <th class = "row-btn add-btn" >
-         <form method="post">
-        ***REMOVED***% csrf_token %***REMOVED***
-            <button type="submit" class = "btn btn-primary select-btn" name = "department-seach" data-name= "{{ section.course_ac ***REMOVED******REMOVED*** {{ section.course_num ***REMOVED******REMOVED***" value = "{{ section.data_id ***REMOVED******REMOVED***"" style = "float: right"
-        ***REMOVED***% if section.data_id in user_followed %***REMOVED*** disabled {% endif %***REMOVED***>
-                Select Course
-            </button>
-        </form>
-        </th>
-    </tr>
-***REMOVED***% endfor %***REMOVED***
-    </table>
-    </div>
+        <table class = "table-striped">
+    ***REMOVED***% for section in course %***REMOVED***
+            <tr class = "section-element">
+                <td class = "row-course">
+                    <span>{{section.course_ac***REMOVED******REMOVED*** {{section.course_num***REMOVED******REMOVED*** - {{ section.course_description ***REMOVED******REMOVED***</span>
+                    <small>({{ section.units ***REMOVED******REMOVED*** units***REMOVED***</small>
+                </td>
+                <td class = "add-btn" >
+                    <form method="post">
+                    ***REMOVED***% csrf_token %***REMOVED***
+                        <button type="submit" class = "btn btn-primary select-btn" name = "department-seach" data-name= "{{ section.course_ac ***REMOVED******REMOVED*** {{ section.course_num ***REMOVED******REMOVED***" value = "{{ section.data_id ***REMOVED******REMOVED***""
+                    ***REMOVED***% if section.data_id in user_followed %***REMOVED*** disabled {% endif %***REMOVED***>
+                            Select Course
+                        </button>
+                    </form>
+                </td>
+            </tr>
+    ***REMOVED***% endfor %***REMOVED***
+        </table>
     </div>
 </div>
 {% endfor %***REMOVED***

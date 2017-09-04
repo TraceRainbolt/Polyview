@@ -17,31 +17,30 @@
     ***REMOVED***% endif %***REMOVED***
     </div>
 ***REMOVED***% endfor %***REMOVED***
-    <br>
-    <input type="submit" class = "btn btn-primary" value="Filter Courses" name = "section-search"/>
+    <input type="submit" class = "btn btn-search" value="Filter Courses" name = "section-search"/>
 </form>
 {% endblock form %***REMOVED***
 
 {% block results %***REMOVED***
 {% if search_results %***REMOVED***
 {% for group in search_results %***REMOVED***
-<div class = "hidable-table">
+<div class = "table-div hidable-table">
     <h3 class = "course-title"> {{ full_dep|get_item:group.0.0.course_id.course_ac***REMOVED******REMOVED*** </h3>
-    <div class = "class-table">
-        <table class = "table table-striped">
+    <div class = "class-table scroll-table">
+        <table class = "table-striped">
             <thead>
                 <tr class = "row-desc">
                     <th width = "1%">Add</th>
                     <th width = "4%">Class #</th>
                     <th width = "3%">Sec.</th>
                     <th width = "3%">Type</th>
-                    <th width = "10%">Instructor</th>
-                    <th width = "4%">Polyrating</th>
+                    <th width = "12%">Instructor</th>
+                    <th width = "4%">Rating</th>
                     <th width = "4%">Avail.</th>
                     <th width = "4%">Taken</th>
                     <th width = "4%">Waiting</th>
-                    <th width = "8%">Status</th>
-                    <th width = "7%">Days</th>
+                    <th width = "4%">Status</th>
+                    <th width = "4%">Days</th>
                     <th width = "6%">Start</th>
                     <th width = "6%">End</th>
                     <th width = "11%">Building</th>
@@ -50,7 +49,7 @@
             </thead>    
         ***REMOVED***% for subgroup in group %***REMOVED***
             <tbody>
-                <tr><td colspan = "15" style = "background: white;"></td></tr>
+                <tr><td class = "row-spacer" colspan = "15"></td></tr>
                 <tr>
                     <th colspan = "14" class = "course-subtitle">
                     ***REMOVED***{subgroup.0.course_id.course_ac***REMOVED******REMOVED*** {{subgroup.0.course_id.course_num***REMOVED******REMOVED*** - {{ subgroup.0.course_id.course_description ***REMOVED******REMOVED***
@@ -63,11 +62,11 @@
                     <td>{{ result.class_field ***REMOVED******REMOVED***</td>
                     <td>{{ result.sec_num ***REMOVED******REMOVED***</td>
                     <td>{{ result.type ***REMOVED******REMOVED***</td>
-                    <td>{{ result.instructor ***REMOVED******REMOVED***</td>
-                ***REMOVED***% if  result.rating %***REMOVED***
-                    <td>{{ result.rating ***REMOVED******REMOVED***</td>
+                    <td>{{ result.instructor.instructor ***REMOVED******REMOVED***</td>
+                ***REMOVED***% if  result.instructor.rating %***REMOVED***
+                    <td>{{ result.instructor.rating ***REMOVED******REMOVED***</td>
                 ***REMOVED***% else %***REMOVED***
-                    <td> -- </td>
+                    <td> -- </td> 
                 ***REMOVED***% endif %***REMOVED***
                     <td>{{ result.available ***REMOVED******REMOVED***</td>
                     <td>{{ result.taken ***REMOVED******REMOVED***</td>
@@ -92,12 +91,8 @@
 {% block buttons %***REMOVED***
 <form action="/search/" method="post">
 ***REMOVED***% csrf_token %***REMOVED***
-    <div>
-        <input type="submit" class = "btn btn-secondary" value="Choose Courses" name = "course-search" />
-    </div>
-    <div>
-        <input type="submit" class = "btn btn-primary" value="View Schedules" name = "schedule-search"/>
-    </div>
+    <input type="submit" class = "btn btn-header btn-back" value="Choose Courses" name = "course-search" />
+    <input type="submit" class = "btn btn-header" value="View Schedules" name = "schedule-search"/>
 </form>
 {% endblock buttons %***REMOVED***
 

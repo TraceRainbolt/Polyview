@@ -28,3 +28,10 @@ class SectionForm(forms.Form***REMOVED***:
     class_rating_min = forms.DecimalField(
         label='Min. Polyrating:', max_digits=3, max_value=4, min_value=0, required=False***REMOVED***
     # class_rating_max = forms.DecimalField(label='Maximum Polyrating:', max_digits = 3, max_value=4,min_value=0, required=False***REMOVED***
+
+
+class ScheduleForm(forms.Form***REMOVED***:
+    sort_1 = forms.ChoiceField(
+        label='Primary Sort:', choices=form_data.sort_choices, required=False***REMOVED***
+    sort_2 = forms.ChoiceField(
+        label='Secondary Sort:', choices=form_data.sort_choices, required=False***REMOVED***

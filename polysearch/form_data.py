@@ -79,7 +79,7 @@ department_choices = (
     ('WVIT','WVIT-Wine and Viticulture'***REMOVED***,
 ***REMOVED***
 
-# Convert to dict for display purposes. (Tuple is required for django choices***REMOVED***
+# Convert to dict for display purposes on tables. (Tuple is required for django choices***REMOVED***
 departments = dict([[x.split('-'***REMOVED*** for x in choice***REMOVED***[1***REMOVED*** for choice in department_choices***REMOVED******REMOVED***
 
 ge_areas = ['Show all GE',
@@ -109,6 +109,21 @@ ge_areas = ['Show all GE',
             'GEF-General Educ Area F***REMOVED***'***REMOVED***
 
 area_choices = zip(ge_areas, ge_areas***REMOVED***
+
+sort_choices = (
+    ('Fewest Days', 'Fewest Days'***REMOVED***,
+    ('Shortest Days', 'Shortest Days'***REMOVED***,
+    ('Most Free Days', 'Most Free Days'***REMOVED***,
+    ('Morning Classes', 'Morning Classes'***REMOVED***,
+    ('Evening Classes', 'Evening Classes'***REMOVED***,
+    ('Midday Classes', 'Midday Classes'***REMOVED***,
+    ('Fewest Breaks', 'Fewest Breaks'***REMOVED***,
+    ('Most Breaks', 'Most Breaks'***REMOVED***,
+    ('Fewest Breaks', 'Fewest Breaks'***REMOVED***,
+    ('Average Polrating', 'Average Polrating'***REMOVED***,
+    ('Highest Polrating', 'Highest Polrating'***REMOVED***,
+    ('Best Lowest Polyrating', 'Best Lowest Polyrating'***REMOVED***,
+***REMOVED***
 
 
 # No longer needed due to list comprehension.

@@ -1,63 +1,121 @@
 {% extends "polysearch/search_base.html" %***REMOVED***
 {% load widget_tweaks %***REMOVED***
+{% block form %***REMOVED***
+<form action="/search/" method="post">
+    <h3>Filter courses.</h3>
+***REMOVED***% csrf_token %***REMOVED***
+***REMOVED***% for field in form %***REMOVED***
+    <div class = "form-group">
+    ***REMOVED***{ field.label ***REMOVED******REMOVED***
+    ***REMOVED***{ field|add_class:"form-control"***REMOVED******REMOVED***
+    </div>
+***REMOVED***% endfor %***REMOVED***
+    <input type="submit" class = "btn btn-search" value="Filter Courses" name = "section-search"/>
+</form>
+{% endblock form %***REMOVED***
 
 {% block results %***REMOVED***
 {% for schedule in search_results %***REMOVED***
 <div class = "hidable-table">
-    <h3 class = "course-title">Schedule {{ forloop.counter ***REMOVED******REMOVED***</h3>
-    <div class = "class-table">
-        <table class = "table table-striped">
-            <thead>
-                <tr class = "row-desc">
-                    <th width = "4%">Class #</th>
-                    <th width = "3%">Sec.</th>
-                    <th width = "3%">Type</th>
-                    <th width = "10%">Instructor</th>
-                    <th width = "4%">Polyrating</th>
-                    <th width = "4%">Avail.</th>
-                    <th width = "4%">Taken</th>
-                    <th width = "4%">Waiting</th>
-                    <th width = "8%">Status</th>
-                    <th width = "7%">Days</th>
-                    <th width = "6%">Start</th>
-                    <th width = "6%">End</th>
-                    <th width = "11%">Building</th>
-                    <th width = "4%">Room</th>
-                </tr>
-            </thead>    
-        ***REMOVED***% for section in schedule %***REMOVED***
-                <tr class="row-class row-toggleable {{section.status***REMOVED******REMOVED***">
-                    <td>{{ section.class_field ***REMOVED******REMOVED***</td>
-                    <td>{{ section.sec_num ***REMOVED******REMOVED***</td>
-                    <td>{{ section.type ***REMOVED******REMOVED***</td>
-                    <td>{{ section.instructor ***REMOVED******REMOVED***</td>
-                ***REMOVED***% if  section.rating %***REMOVED***
-                    <td>{{ section.rating ***REMOVED******REMOVED***</td>
-                ***REMOVED***% else %***REMOVED***
-                    <td> -- </td>
-                ***REMOVED***% endif %***REMOVED***
-                    <td>{{ section.available ***REMOVED******REMOVED***</td>
-                    <td>{{ section.taken ***REMOVED******REMOVED***</td>
-                    <td>{{ section.waiting ***REMOVED******REMOVED***</td>
-                    <td>{{ section.status ***REMOVED******REMOVED***</td>
-                    <td>{{ section.days ***REMOVED******REMOVED***</td>
-                    <td>{{ section.start | date:'g:i A' ***REMOVED******REMOVED***</td>
-                    <td>{{ section.end | date:'g:i A' ***REMOVED******REMOVED***</td>
-                    <td>{{ section.building ***REMOVED******REMOVED***</td>
-                    <td>{{ section.room ***REMOVED******REMOVED***</td>
-                </tr>
-        ***REMOVED***% endfor %***REMOVED***
-        </table>
+  <h3 class = "course-title">Schedule {{ forloop.counter ***REMOVED******REMOVED***</h3>
+  <div class = "schedule-container">
+    <div class = "class-table schedule-table scroll-table">
+      <table class = "table-striped">
+        <thead>
+          <tr class = "row-desc">
+            <th width = "4%">Class #</th>
+            <th width = "4%">Course</th>
+            <th width = "2%">Course #</th>
+            <th width = "3%">Sec.</th>
+            <th width = "3%">Type</th>
+            <th width = "12%">Instructor</th>
+            <th width = "4%">Polyrating</th>
+            <th width = "4%">Avail.</th>
+            <th width = "4%">Taken</th>
+            <th width = "4%">Waiting</th>
+            <th width = "4%">Status</th>
+            <th width = "4%">Days</th>
+            <th width = "5%">Start</th>
+            <th width = "5%">End</th>
+            <th width = "11%">Building</th>
+            <th width = "4%">Room</th>
+          </tr>
+        </thead>  
+        <tbody> 
+    ***REMOVED***% for section in schedule.sections %***REMOVED***
+        <tr class="row-class row-toggleable {{section.status***REMOVED******REMOVED***">
+          <td>{{ section.class_field ***REMOVED******REMOVED***</td>
+          <td>{{ section.course_id.course_ac ***REMOVED******REMOVED***</td>
+          <td>{{ section.course_id.course_num ***REMOVED******REMOVED***</td>
+          <td>{{ section.sec_num ***REMOVED******REMOVED***</td>
+          <td>{{ section.type ***REMOVED******REMOVED***</td>
+          <td>{{ section.instructor.instructor ***REMOVED******REMOVED***</td>
+      ***REMOVED***% if  section.instructor.rating %***REMOVED***
+          <td>{{ section.instructor.rating ***REMOVED******REMOVED***</td>
+      ***REMOVED***% else %***REMOVED***
+          <td> -- </td> 
+      ***REMOVED***% endif %***REMOVED***
+          <td>{{ section.available ***REMOVED******REMOVED***</td>
+          <td>{{ section.taken ***REMOVED******REMOVED***</td>
+          <td>{{ section.waiting ***REMOVED******REMOVED***</td>
+          <td>{{ section.status ***REMOVED******REMOVED***</td>
+          <td>{{ section.days ***REMOVED******REMOVED***</td>
+          <td>{{ section.start | date:'g:i A' ***REMOVED******REMOVED***</td>
+          <td>{{ section.end | date:'g:i A' ***REMOVED******REMOVED***</td>
+          <td>{{ section.building ***REMOVED******REMOVED***</td>
+          <td>{{ section.room ***REMOVED******REMOVED***</td>
+        </tr>
+    ***REMOVED***% endfor %***REMOVED***
+        </tbody>
+      </table>
     </div>
+    <div class = "schedule-bottom">
+      <div class = "schedule-view">
+         <table>
+          <tbody>
+        ***REMOVED***% for i in schedule.view_list %***REMOVED***
+            <tr>
+          ***REMOVED***% for j in i %***REMOVED***
+              <td {% if j %***REMOVED*** class = "blocked"{% endif %***REMOVED***></td>
+          ***REMOVED***% endfor %***REMOVED***
+            </tr>
+        ***REMOVED***% endfor %***REMOVED***
+          </tbody>
+        </table>
+      </div>
+      <div class = "schedule-info">
+        <h4>Schedule Info:</h4>
+        <div class = "schedule-wrapper">
+          <div class = "schedule-stats">
+          <ul>
+            <li><strong>Average Polyrating:</strong><span>{{ schedule.avg_rating ***REMOVED******REMOVED***</span></li>
+            <li><strong>Highest Polyrating:</strong><span>{{ schedule.highest_rating ***REMOVED******REMOVED***</span></li>
+            <li><strong>Lowest Polyrating:</strong><span>{{ schedule.lowest_rating ***REMOVED******REMOVED***</span></li>
+            <li><strong># Classes:</strong><span>{{ schedule.number_of_classes ***REMOVED******REMOVED***</span></li>
+            <li><strong># Closed:</strong><span>{{ schedule.number_of_closed ***REMOVED******REMOVED***</span></li>
+            <li><strong># Open</strong><span>{{ schedule.number_of_open ***REMOVED******REMOVED***</span></li>
+          </ul>
+          <ul>
+            <li><strong>Longest Block:</strong><span>{{ schedule.longest_block ***REMOVED******REMOVED*** hours.</span></li>
+            <li><strong>Longest Break:</strong><span>{{ schedule.longest_break ***REMOVED******REMOVED*** hours.</span></li>
+            <li><strong>Number of Days:</strong><span>{{ schedule.number_of_days ***REMOVED******REMOVED***</span></li>
+            <li><strong>Concentration:</strong><span></span></li>
+            <li><strong>Number of Classes:</strong><span> {{ schedule.number_of_classes ***REMOVED******REMOVED***</span></li>
+            <li><strong>Number of Open Classes:</strong><span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endfor %***REMOVED***
 {% endblock results %***REMOVED***
 
 {% block buttons %***REMOVED***
 <form action="/search/" method="post">
-***REMOVED***% csrf_token %***REMOVED***
-    <div>
-        <input type="submit" class = "btn btn-secondary" value="Choose Sections" name = "section-search" />
-    </div>
+  {% csrf_token %***REMOVED***
+  <div>
+    <input type="submit" class = "btn btn-header" value="Choose Sections" name = "section-search" />
+  </div>
 </form>
 {% endblock buttons %***REMOVED***

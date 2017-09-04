@@ -113,7 +113,7 @@ function removeSection(box, class_num***REMOVED***{
 
 function addCourseToList(course_name, course_id***REMOVED*** {
     var followed_list = $(".followed-list"***REMOVED***;
-    var li_html = '<li><h6>' + course_name + ' <a class = "remove-class" data-id=' + course_id + '>Remove</a>';
+    var li_html = '<li><span>' + course_name + ' <a class = "remove-class" data-id=' + course_id + '>Remove</a></span></li>';
     followed_list.append(li_html***REMOVED***;
 ***REMOVED***
 

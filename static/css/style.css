@@ -5,67 +5,235 @@
 /*            */
 /* Global CSS */ 
 /*            */
+
+* {
+    box-sizing: border-box;
+***REMOVED***
+
 body, html {
     background-color: white;
     height: 100%;
-    min-height: 100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
-
-    font-family: 'Raleway', sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 ***REMOVED***
 
-.container-fluid {
-    height: 100%;
-    overflow-y: hidden; /* don't show content that exceeds my height */
+body > div{
+  flex-flow: row wrap;
 ***REMOVED***
 
 li {
     list-style: none;
 ***REMOVED***
 
+a {
+    text-decoration: none;
+***REMOVED***
+
+table {
+    border-spacing: 0;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+***REMOVED***
+
+table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+***REMOVED***
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+
+***REMOVED***
+
+td,
+th {
+    text-align: left;
+    font-family: "Arial";
+    padding: 0;
+***REMOVED***
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+***REMOVED***
+
+.row-spacer {
+    background: white;
+***REMOVED***
+
+input {
+  line-height: normal;
+***REMOVED***
+
+.btn.disabled,
+.btn[disabled***REMOVED***,
+fieldset[disabled***REMOVED*** .btn {
+  cursor: not-allowed;
+  filter: alpha(opacity=65***REMOVED***;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+***REMOVED***
+
 .content {
-	height: 100%;
-	margin, padding: 0;
+    display: flex;
+    flex-direction: column;
+***REMOVED***
+
+
+.btn {
+  display: inline-block;
+  padding: 3px 12px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+***REMOVED***
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+***REMOVED***
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+  text-decoration: none;
+***REMOVED***
+.btn:active,
+.btn.active {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125***REMOVED***;
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125***REMOVED***;
+***REMOVED***
+
+.btn-back {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+***REMOVED***
+.btn-back:focus,
+.btn-back.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+***REMOVED***
+.btn-back:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+***REMOVED***
+
+.table-striped > tbody > tr:nth-of-type(odd***REMOVED*** {
+  background-color: #f9f9f9;
+***REMOVED***
+
+.form-group {
+  margin-bottom: 15px;
+***REMOVED***
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075***REMOVED***;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075***REMOVED***;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+***REMOVED***
+
+
+#polyview-brand {
+    display: none;
+	color: white;
+	font-size: 1em;
+    font-weight: bold;
 ***REMOVED***
 
 .navbar {
-	margin: 0;
-	background-color: #3a7d54;
-	border-color: darkgreen;
+    margin: 0;
+    background-color: #3a7d54;
+    border-color: darkgreen;
 ***REMOVED***
 
-#polyview-brand {
+.navbar>ul {
+    margin: 0;
+    padding: 0;
+***REMOVED***
+
+.navbar>ul li {
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+***REMOVED***
+
+.navbar>ul a {
+    width: 100%;
+    margin: 0 -5px;
+    display: inline-block;
+    padding: 1rem;
 	color: white;
-	font-family: "Raleway";
-	font-size: 1em;
 ***REMOVED***
 
-.nav a {
-	color: white !important;
+.navbar>ul a:hover {
+	background: #2e6b46;
 ***REMOVED***
 
-.nav a:hover {
-	background: #38714e !important;
-***REMOVED***
-
-
-.nav .active a { 
-	background: #38714e !important;
-***REMOVED***
-
-.nav .active a:hover {
-	background: #38714e !important;
+.navbar>ul .active a{ 
+	background: #2e6b46;
+    color: white;
 ***REMOVED***
 
 #separator {
-	margin: 0.5rem;
-	margin-top: 1rem;
+    padding: 0;
+    padding-top: -1rem;
 	content: "";
-	border-right: 1px white solid;
-	height: 3rem;
+	border-right: 1px white solid;
 ***REMOVED***
 
 /*              */
@@ -73,7 +241,7 @@ li {
 /*              */
 
 #home {
-    height: 100%;
+    width: 100%;
     background:     
     linear-gradient(
       rgba(0, 0, 0, 0.4***REMOVED***, 
@@ -99,8 +267,7 @@ li {
 ***REMOVED***
 
 #background-band {
-    padding-top: 6.8rem;
-    height: 42rem;
+    height: 20%;
 ***REMOVED***
 
 #band-content {
@@ -110,24 +277,13 @@ li {
 ***REMOVED***
 
 #home h3 {
-    display: inline-block;
     margin: 0 auto;
-    margin-top:;
     padding-top: 6rem;
+    display: inline-block;
     font-family: "Raleway";
-    font-size: 10rem;
+    font-size: 4rem;
     color: #f3f4f4;
     text-shadow: -3px 3px #767571, 1px -1px #101010;
-***REMOVED***
-
-#band-content p {
-    margin:0 auto;
-    padding-left: 10rem;
-    margin-top: 0.58em;
-    text-align: left;
-    font-family: "Raleway";
-    font-size: 2rem;
-    color: #f9faf3;
 ***REMOVED***
 
 #band-points {
@@ -136,16 +292,16 @@ li {
 
 #home-buttons {
     display: flex;
+    margin: 3rem 0;
     align-items: center;
     justify-content: center;
-    height: 12rem;
 ***REMOVED***
 
 #home-buttons button {
-    margin: 0 2rem;
-    height: 4rem;
-    width: 18rem;
-    font-size: 1.2em;
+    margin: 0 0.5rem;
+    width: 9rem;
+    height: 2rem;
+    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.8***REMOVED***;
     background-color: rgba(255, 255, 255, 0.16***REMOVED***;
     border-color: rgba(255, 255, 255, 0.16***REMOVED***;
@@ -160,16 +316,20 @@ li {
 #home-content {
     height: 100%;
     display: flex;
-    margin-top: 7rem;
+    flex-direction: column;
     background: #eee;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 ***REMOVED***
 
 .home-info {
-    position:relative;
+    flex-basis: 100%;
+    max-width: 370px;
+    margin: 1rem;
+    padding: 1.2rem;
     flex: 1;
     flex-direction: row;
-    height: 68rem;
-    margin: 8rem 3rem  0;
     background: white;
     border-top: 5px solid #38714e;
 ***REMOVED***
@@ -177,64 +337,37 @@ li {
 #home-gears {
     display: block;
     margin: 0 auto;
-    margin-top: 5rem;
     padding: 0.5rem;
-    height: 20%;
-    text-align: center;
-***REMOVED***
-
-#home-question {
-    display: block;
-    margin: 0 auto;
-    margin-top: 5rem;
-    padding: 0.5rem;
-    height: 20%;
+    height: 100px;
     text-align: center;
 ***REMOVED***
 
 .home-info h2 {
-    padding-top: 2rem;
     text-align: center;
-    font-size: 4rem;
+    font-size: 1.5rem;
     color: #555;
 ***REMOVED***
 
 .home-info p {
-    padding: 1rem 5rem;
-    font-size: 1.8rem;
+    padding: 0.2rem;
+    font-size: 1rem;
     color: #777;
 ***REMOVED***
 
 .home-info ul {
-    padding-left: 6rem;
-    padding-bottom: 5rem;
+    padding: 0.4rem;
 ***REMOVED***
 
 .home-info li {
-    padding: 1rem;
-    font-size: 2.2rem;
+    padding: 0.8rem;
+    font-size: 1rem;
     color: #777;
-    list-style: initial;
-***REMOVED***
-
-.home-info-left {
-    margin-left: 16%;
-***REMOVED***
-
-.home-info-right {
-    margin-right: 16%;
 ***REMOVED***
 
 .home-info-btn {
-    position: absolute;
-    bottom:  2rem;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    display : block;
-    height: 4rem;
-    width: 18rem;
+    height: 3rem;
+    width: 9rem;
+    margin: 0 auto;
     font-size: 1.2em;
     color: #38714e;
     background-color: white;
@@ -268,7 +401,7 @@ li {
 /* Search Page CSS */
 /*                 */
 
-/* Both searches */
+/* All searches */
 
 #search-page {
 	background-image: none;
@@ -276,51 +409,52 @@ li {
 ***REMOVED***
 
 #search-header {
-	margin-right: -15px;
-	padding-left: 3vw;
-	height: 5rem;
-	width:100%;;
+    justify-content: end;
+    width: 100%;
+    flex-direction: column;
 	background: #efefef;
 	border-bottom: 1px solid lightgrey;
 ***REMOVED***
 
 #search-header h3 {
-	margin: 0;
-	padding: 0;
-	width: 20rem;
-	margin-top: 13px;
-	font-size:1.7em;
-***REMOVED***
-
-#quarter {
-    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2rem;
+    flex: 1;
+    margin: 0;
+    margin-top: 0.3rem;
+    margin-left: 1rem;
     text-align: center;
-	float: left;
+    font-family: "Raleway";
+	font-size: calc(0.7rem + 0.8vw***REMOVED***;
 ***REMOVED***
 
 .btn-container {
-	padding-top: 7px;
+    display: inline-block;
+    flex: 1;
+    margin: 0.3rem;
+
+    flex-grow: 4;
+    float: right;
 ***REMOVED***
 
-.btn-container form div {
-	display:inline-block;
+.btn-search {
+    margin: 1rem;
+    margin-top: 0;
 ***REMOVED***
 
-
-#results-count {
-	padding: 0 7px;
-***REMOVED***
 
 #search-form {
-	margin: 0;
-	margin-top: 20px;
-	padding: 18px;
+    flex: 1;
+    flex-direction: row;
+    margin: 0.5rem;
+    padding: 0.7rem;
 
-	background-color: rgba(239, 239, 239, .7***REMOVED***;
+    background-color: rgba(239, 239, 239, .7***REMOVED***;
 
-	border-style: solid;
-	border-color: darkgrey;
-	border-width: 1px;
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 1px;
 
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 1s; /* Firefox < 16 */
@@ -330,35 +464,48 @@ li {
 ***REMOVED***
 
 #search-form h3 {
-    margin-top: 4px;
-	padding: 0; 
-	padding-bottom: 13px;
-	padding-top: 3px;
-	font-size: 1.24em;
+    margin: 0.3rem;
+    font-size: 1.24rem;
+    color: #333;
+    text-align: center;
+    font-weight: 100;
+***REMOVED***
+
+#search-form h5 {
+    margin: 0.4rem;
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    font-weight: 100;
+***REMOVED***
+
+.form-group {
+    padding-bottom: 1rem;
+***REMOVED***
+
+#results-count {
+	padding: 0 7px;
 ***REMOVED***
 
 .form-group {
 	margin: 2px;
 ***REMOVED***
 
-
-.add-btn {
-	border-right: 1px solid lightgrey;
+.table-col {
+    flex: 1;
 ***REMOVED***
 
-.table-col {
-    margin-top: 20px;
+.hidable-table {
+    flex: 1;
 ***REMOVED***
 
 .class-table {
-    overflow: auto;
+    margin: 0.2rem;
 ***REMOVED***
 
-.main-table td, tr {
-    border-collapse: separate; 
-    white-space: nowrap; overflow: hidden; text-overflow:ellipsis;
+.scroll-table {
+    overflow-x: auto;
 ***REMOVED***
-
 
 /* Course Page */
 
@@ -378,32 +525,51 @@ li {
 ***REMOVED***
 
 .followed-classes {
-    max-height: 200px;
+    max-height: 8.3rem;
     overflow: auto;
     background: #fefefe;
     border: 1px solid lightgrey;
 ***REMOVED***
 
 .followed-classes ul {
-    padding: 0 6px;
+    margin: 0;
+    padding: 0.2rem 0.6rem;
+***REMOVED***
+
+.followed-classes li {
+    padding-top: 0.3rem;
 ***REMOVED***
 
 .followed-classes a {
+    color: #1589af;
     cursor: pointer;
 ***REMOVED***
 
 .row-course {
-    border-left: 5px solid #efefef;
-    border-bottom: 1px solid #efefef;
-    font-size: 110%;
-    padding-bottom: 10px;
+    width: calc(100vw - 9rem***REMOVED***;
+    display: block;
+    padding: 0.4rem 0.3rem;
+    font-size: 1rem;
+    text-align: left;
 ***REMOVED***
 
-.row-btn {
-    border-bottom: 1px solid #efefef;
-    font-size: 110%;
-    padding-bottom: 10px;
+.add-btn {
+    border-right: 1px solid lightgrey;
 ***REMOVED***
+
+.select-btn {
+    float: right;
+***REMOVED***
+
+.row-course span {
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 90%;
+    margin-right: 10px;
+***REMOVED***
+
 
 #results-header {
 	margin: 0;
@@ -415,10 +581,12 @@ li {
 ***REMOVED***
 
 .course-title {
+    max-width: 98vw;
+    margin: 0 auto;
 	margin-top: 10px;
 	font-family: "Raleway";
 	color: white;
-	font-size: 1.3em;
+	font-size: 1.2rem;
 	background-color: #3a7d54;
 	border: solid 1px darkgreen;
 	padding: 4px;
@@ -449,8 +617,7 @@ li {
 
 #results-count {
     display: inline-block;
-    padding-top: 2rem;
-    font-size: 1.4rem;
+    font-size: 1rem;
     color: grey;
 ***REMOVED***
 
@@ -462,6 +629,11 @@ li {
 
 .section-element {
     padding-bottom: 1em;
+    border-left: 5px solid #efefef;
+***REMOVED***
+
+.section-element:last-child {
+    border-bottom: 1px solid #ddd;
 ***REMOVED***
 
 .row-desc {
@@ -494,123 +666,219 @@ li {
     border-left: 4px solid #b41515;
 ***REMOVED***
 
+/* Schedule Search */
+
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+***REMOVED***
+
+.schedule-table {
+    flex-direction: row;
+***REMOVED***
+
+
+.blocked {
+    background: #CCC;
+***REMOVED***
+
+.schedule-bottom {
+    height: 12.5rem;
+    padding: 0.8rem;
+    margin-top: -0.9rem;
+    flex-direction: row;
+    background: #f7f9f7;
+    border: lightgrey 1px solid;
+***REMOVED***
+
+.schedule-wrapper {
+    width: calc(100vw - 11rem***REMOVED***;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    overflow-x: scroll;
+***REMOVED***
+
+.schedule-view {
+    display: inline-block;
+    border: lightgrey 1px solid;
+    background: white;
+***REMOVED***
+
+.schedule-view td {
+    padding: 0;
+    border: none;
+    width: 23px;
+***REMOVED***
+
+.schedule-view tr {
+    padding: 0;
+    height: 5px;
+***REMOVED***
+
+.schedule-info {
+    display: inline-block;
+    vertical-align: top;
+***REMOVED***
+
+.schedule-info h4 {
+    margin: 0;
+    padding-left: 1rem;
+***REMOVED***
+
+.schedule-stats {
+    margin: 0;
+    margin-bottom: 1em;
+    width: 30rem;  
+***REMOVED***
+
+.schedule-stats ul {
+    display: inline-block;
+    padding-left: 0;
+***REMOVED***
+
+.schedule-stats ul li {
+    display: block;
+    width: auto;
+***REMOVED***
+
+.schedule-stats ul li span {
+    padding: 0 1rem;
+    float: right;
+***REMOVED***
+
+.schedule-stats li:nth-child(3***REMOVED***{
+    padding-bottom: 1rem;
+***REMOVED***
+
+.schedule-stats li {
+    font-size: 1rem;
+***REMOVED***
 
 
 /*                */
 /* About page CSS */
 /*                */
 
-#text-area {
-	margin-top: 4em;
-	padding-top: 12px;
-	background: rgba(23, 23, 23, 0.4***REMOVED***;
-	height: 80rem;
-	border: 1px solid darkgrey;
-	background: rgba(220, 220, 220, 0.82***REMOVED***;
+/*TODO*/
 
-	-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-	   -moz-animation: fadein 1s; /* Firefox < 16 */
-	    -ms-animation: fadein 1s; /* Internet Explorer */
-	     -o-animation: fadein 1s; /* Opera < 12.1 */
-	        animation: fadein 1s;
-***REMOVED***
-
-#text-area h3 {
-	padding-bottom: 5px;
-	text-align: center;
-	font-family: "Raleway Regular";
-	font-size: 5.4rem;
-	color: #FFF;
-	text-shadow: -2px 2px #767571, 1px -1px #767571;
-***REMOVED***
-
-#text-area  > h3::after {
-	margin: auto;
-	margin-top: 25px;
-    background-color: rgba(190, 190, 190, 0.5***REMOVED***;
-    content: "";
-    display: block;
-    height: 4px;
-    vertical-align: middle;
-    text-align: ;
-    width: 90%;
-***REMOVED***
-
-#text-area p {
-	padding-top: 3rem;
-	margin: auto;
-	width: 90%;
-	font-size: 2.2rem;
-***REMOVED***
-
-/* Search Mobile CSS */
-
-/* Landscape tablets and medium desktops */
-@media (max-width: 1199px***REMOVED*** {
-     #home-content {
-        flex-direction: column;
-        height: 200rem;
- ***REMOVED***
-
-    .home-info {
+/* Desktop CSS */
+@media (min-width: 1500px***REMOVED*** {
+    .content {
         flex-direction: row;
-        margin: 5rem;
- ***REMOVED***
-
-	.content {
-    	background-attachment: scroll;
-	***REMOVED***
-
-	.class-table table td {
-		max-width: 100px;
-    	overflow: hidden;
-    	text-overflow: ellipsis;
-    	white-space: nowrap;
-	***REMOVED***
-	.class-table table th:nth-child(5***REMOVED*** {
-		max-width: 60px;
-    	overflow: hidden;
-    	text-overflow: ellipsis;
-    	white-space: nowrap;
-	***REMOVED***
-
-	.class-table {
-		border: 1px solid lightgrey;
-		overflow-x: scroll;
-	***REMOVED***
 ***REMOVED***
 
-/* Portrait tablets and small desktops */
-@media (max-width: 460px***REMOVED*** {
-    #home-content {
-        margin: 0;
-***REMOVED***
-    .home-info {
-        flex-direction: row;
-        margin: 0;
- ***REMOVED***
-    #home h3 {
-        font-size: 6rem;
-***REMOVED***
     #search-header {
-        height: 8.5rem;
-***REMOVED***
-    .btn-container form div {
-        line-height: 6px;
-        vertical-align: middle;
-        height: 25px;
-***REMOVED***
-    #quarter {
-        margin: 0 -20px;
-        font-size: 0.8rem;
-        width: 190px;
-        display: block;
-***REMOVED***
+        flex-direction: row;
 ***REMOVED***
 
+    #search-header h3 {
+        flex: 1;
+        margin-left: 4.2rem;
+        margin-top: 0.4rem;
+***REMOVED***
+
+    .table-col {
+        flex: 9;
+        flex-shrink: 6;
+        flex-direction: row;
+        margin: 0 5rem 0 0.8rem;
+***REMOVED***
+
+
+    .btn {
+        margin: 0;
+***REMOVED***
+
+    .btn-container {
+        margin: 0.3rem;
+        margin-right: 6rem;
+***REMOVED***
+
+    .btn-header {
+        width: 9rem;
+***REMOVED***
+
+    #search-form {
+        height: 100%;
+        min-width: 15rem;
+        flex: 2;
+        display:flex;
+        flex-direction: column;
+        margin-left: 1rem;
+        overflow:hidden;
+***REMOVED***
+
+    .course-title {
+        width: 100%;
+***REMOVED***
+
+    .row-course {
+        width: 100%;
+***REMOVED***
+
+    .schedule-info {
+        width: auto;
+***REMOVED***
+
+    .schedule-table {
+        flex: 4;
+***REMOVED***
+
+    .schedule-bottom {
+        flex: 2;
+***REMOVED***
+
+    .schedule-view{
+        padding: 0 1rem;
+***REMOVED***
+
+    .schedule-wrapper {
+        width: auto;
+        overflow: hidden;
+***REMOVED***
+
+***REMOVED***
+
+@media (min-width: 768px***REMOVED*** {
+    .navbar {
+        background-color: #3a7d54;
+        border-color: darkgreen;
+        font-family: "Raleway";
+        font-size: 1rem;
+***REMOVED***
+
+    #polyview-brand {
+        display: inline-block;
+        margin-left: 20vw;
+***REMOVED***
+
+
+    #home-content {
+        flex-direction: row;
+***REMOVED***
+
+    .home-info {
+        flex-direction: column;
+***REMOVED***
+
+    .navbar>ul {
+        padding: 0 1rem;
+        display: inline-block;
+***REMOVED***
+
+    .navbar>ul li {
+        display: inline-block;
+***REMOVED***
+    .navbar>ul a {
+        width: auto;
+***REMOVED***
+
+    .schedule-stats {
+        width: auto;
+***REMOVED***
+***REMOVED***
 
 /* Fade in transition*/
-
 @keyframes fadein {
     from { opacity: 0; ***REMOVED***
     to   { opacity: 1; ***REMOVED***

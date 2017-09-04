@@ -24,13 +24,22 @@ class Courses(models.Model***REMOVED***:
         managed = False
         db_table = 'scrape_courses_fall_2017'
 
+class Instructors(models.Model***REMOVED***:
+    instructor = models.CharField(primary_key=True, max_length=50***REMOVED***
+    rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True***REMOVED***
+    instructor_id = models.SmallIntegerField(blank=True, null=True***REMOVED***
+
+    class Meta:
+        managed = False
+        db_table = 'scrape_instructors'
+
 
 class Sections(models.Model***REMOVED***:
     class_field = models.SmallIntegerField(db_column='class', primary_key=True***REMOVED***
     course_id = models.ForeignKey(Courses, models.DO_NOTHING, db_column='course_id'***REMOVED***
     sec_num = models.SmallIntegerField(***REMOVED***
     type = models.CharField(max_length=3, blank=True, null=True***REMOVED***
-    instructor = models.CharField(max_length=50, blank=True, null=True***REMOVED***
+    instructor = models.ForeignKey(Instructors, models.DO_NOTHING, db_column='instructor', blank=True, null=True***REMOVED***
     available = models.SmallIntegerField(blank=True, null=True***REMOVED***
     taken = models.SmallIntegerField(blank=True, null=True***REMOVED***
     waiting = models.SmallIntegerField(blank=True, null=True***REMOVED***
