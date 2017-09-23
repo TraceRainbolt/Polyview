@@ -3,13 +3,13 @@
     <a href = "/" id="polyview-brand">Polyview</a>
     <ul>
     	{% url 'home' as home %***REMOVED***
-    ***REMOVED***% url 'followed' as followed %***REMOVED***
+    ***REMOVED***% url 'profile' as profile %***REMOVED***
 		***REMOVED***% url 'search' as search %***REMOVED***
 			{% url 'about' as about %***REMOVED***
         <li {% if request.path == home %***REMOVED*** class="active" {% endif %***REMOVED***><a href="{{ home ***REMOVED******REMOVED***">Home</a></li>
         <li {% if request.path == followed %***REMOVED*** class="active" {% endif %***REMOVED***>
     ***REMOVED***% if user.is_authenticated %***REMOVED***
-        <a href="{% url 'followed' %***REMOVED***">Account</a>
+        <a href="{% url 'profile' %***REMOVED***">Profile</a>
     ***REMOVED***% else %***REMOVED***
         <a href="{% url 'social:begin' 'google-oauth2' %***REMOVED***">
         Sign-In

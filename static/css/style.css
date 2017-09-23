@@ -412,8 +412,8 @@ fieldset[disabled***REMOVED*** .btn {
     justify-content: end;
     width: 100%;
     flex-direction: column;
-	background: #efefef;
-	border-bottom: 1px solid lightgrey;
+	background: #f4f4f4;
+/*	border-bottom: 1px solid lightgrey;*/
 ***REMOVED***
 
 #search-header h3 {
@@ -425,8 +425,9 @@ fieldset[disabled***REMOVED*** .btn {
     margin-top: 0.3rem;
     margin-left: 1rem;
     text-align: center;
+    color: #444;
     font-family: "Raleway";
-	font-size: calc(0.7rem + 0.8vw***REMOVED***;
+	font-size: calc(0.6rem + 0.8vw***REMOVED***;
 ***REMOVED***
 
 .btn-container {
@@ -447,14 +448,14 @@ fieldset[disabled***REMOVED*** .btn {
 #search-form {
     flex: 1;
     flex-direction: row;
-    margin: 0.5rem;
+    margin: 0.7rem;
     padding: 0.7rem;
+    color: #333;
 
-    background-color: rgba(239, 239, 239, .7***REMOVED***;
+    background-color: #f4f4f4;
 
-    border-style: solid;
-    border-color: darkgrey;
-    border-width: 1px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 
     -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 1s; /* Firefox < 16 */
@@ -509,26 +510,24 @@ fieldset[disabled***REMOVED*** .btn {
 
 /* Course Page */
 
-.department-list {
-    margin: 0;
-    height: 180px;
-    background: #fefefe;
-    border: 1px solid lightgrey;
-    overflow: auto;
-***REMOVED***
-
-#id_class_department, #id_class_area {
-    margin: 0; 
-    padding-left: 4px;
-    padding-bottom: 2px;
-    font-size: .8em;
+.selectfilterstacked {
+    width: 100%;
+    height: 200px;
+    margin-top: 5px;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+    color: #333;
+    border: 1px #ccc solid;
+    border-radius: 4px;
 ***REMOVED***
 
 .followed-classes {
+    margin: 10px 2px;
     max-height: 8.3rem;
     overflow: auto;
     background: #fefefe;
-    border: 1px solid lightgrey;
+    border: 1px #ccc solid;
+    border-radius: 4px;
 ***REMOVED***
 
 .followed-classes ul {
@@ -543,6 +542,11 @@ fieldset[disabled***REMOVED*** .btn {
 .followed-classes a {
     color: #1589af;
     cursor: pointer;
+***REMOVED***
+
+.followed-classes a:hover {
+    color: #2689ac;
+    text-decoration: underline;
 ***REMOVED***
 
 .row-course {
@@ -852,8 +856,16 @@ fieldset[disabled***REMOVED*** .btn {
         margin-left: 20vw;
 ***REMOVED***
 
+    #background-band {
+        margin: 6% 0;
+***REMOVED***
+
+    #background-band h3 {
+        font-size: 8rem;
+***REMOVED***
 
     #home-content {
+        height: 60%;
         flex-direction: row;
 ***REMOVED***
 

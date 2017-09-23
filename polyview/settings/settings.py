@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [u'www.polyview.me', '31.220.43.120', u'127.0.0.1', u'localhost'
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
+***REMOVED***
     'social.apps.django_app.default',
 ***REMOVED***
 ***REMOVED***

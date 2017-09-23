@@ -1,13 +1,16 @@
 from django import forms
 from .models import Sections
 import form_data
+from widgets import FilteredSelectMultiple
 
 
 class CourseForm(forms.Form***REMOVED***:
     class_department = forms.MultipleChoiceField(
-        label='Department:', choices=form_data.department_choices, widget=forms.CheckboxSelectMultiple, required=False***REMOVED***
+        label='Department:', choices=form_data.department_choices, 
+        widget=FilteredSelectMultiple("department_form", is_stacked=True***REMOVED***, required=False***REMOVED***
     class_area = forms.MultipleChoiceField(
-        label='GE Area:', choices=form_data.area_choices, widget=forms.CheckboxSelectMultiple, required=False***REMOVED***
+        label='GE Area:', choices=form_data.area_choices, 
+        widget=FilteredSelectMultiple("area_form", is_stacked=True***REMOVED***, required=False***REMOVED***
 
 
 class SectionForm(forms.Form***REMOVED***:

@@ -24,15 +24,18 @@ class Schedule(object***REMOVED***:
         ratings = [***REMOVED***
         for section_combo in self.section_combos:
             rating_1 = section_combo.section_1['instructor__rating'***REMOVED***
-            rating_2 = section_combo.section_2['instructor__rating'***REMOVED***
+            if section_combo.section_2:
+                rating_2 = section_combo.section_2['instructor__rating'***REMOVED***
+            else:
+                rating_2 = None
             for rating in rating_1, rating_2:
                 if rating: ratings.append(rating***REMOVED***
         if ratings:
-            average = float(sum(ratings***REMOVED******REMOVED*** / float(len(ratings***REMOVED******REMOVED***
+            average = round(float(sum(ratings***REMOVED******REMOVED*** / float(len(ratings***REMOVED******REMOVED***, 2***REMOVED***
             lowest = min(ratings***REMOVED***
             highest = max(ratings***REMOVED***
             return average, lowest, highest
-        return None
+        return "--", "--", "--"
 
     def find_longest(self, view_list***REMOVED***:
         longest = 0
@@ -136,6 +139,7 @@ class Schedule(object***REMOVED***:
                     # combo-ed with labs, so thats why this is SO ugly
                     if section['type'***REMOVED*** == 'LEC' or section['type'***REMOVED*** == 'ACT':
                         if lecture:
+                            labs.append(section***REMOVED***
                             continue
                         else:
                             lecture = section
@@ -151,6 +155,8 @@ class Schedule(object***REMOVED***:
                         combos.append(SectionCombo(iter([lecture, lab***REMOVED******REMOVED******REMOVED******REMOVED***
                     else:
                         combos.append(SectionCombo(iter([lab***REMOVED******REMOVED******REMOVED******REMOVED***
+                if not labs:
+                    combos.append(SectionCombo(iter([lecture***REMOVED******REMOVED******REMOVED******REMOVED***
             course_groups.append(combos***REMOVED***
         return course_groups
 

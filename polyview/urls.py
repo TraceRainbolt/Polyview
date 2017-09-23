@@ -20,7 +20,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="polyview/home.html"***REMOVED***, name="home"***REMOVED***,
     url(r"^soc/", include("social.apps.django_app.urls", namespace="social"***REMOVED***, name="signin"***REMOVED***,
-    url(r'^followed/', TemplateView.as_view(template_name="polysearch/followed.html"***REMOVED***, name="followed"***REMOVED***,
+    url(r'^profile/', include('polyprofile.urls'***REMOVED***, name="profile"***REMOVED***,
     url(r'^search/', include('polysearch.urls'***REMOVED***, name="search"***REMOVED***,
     url(r'^about/', TemplateView.as_view(template_name="polyview/about.html"***REMOVED***, name="about"***REMOVED***,
     url('^', include('django.contrib.auth.urls'***REMOVED******REMOVED***,

@@ -26,7 +26,7 @@ class Courses(models.Model***REMOVED***:
 
 class Instructors(models.Model***REMOVED***:
     instructor = models.CharField(primary_key=True, max_length=50***REMOVED***
-    rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True***REMOVED***
+    rating = mo dels.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True***REMOVED***
     instructor_id = models.SmallIntegerField(blank=True, null=True***REMOVED***
 
     class Meta:

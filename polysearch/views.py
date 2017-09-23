@@ -95,7 +95,7 @@ def find_schedules(request, form***REMOVED***:
     course_info = sections.order_by('course_id', 'sec_group', 'start'***REMOVED***.values(
         'course_id', 'class_field', 'sec_group', 'days', 'type', 'start', 'end', 'instructor__rating'***REMOVED***
     schedules = Schedule.create_schedules(course_info***REMOVED***
-    schedules = sort_schedules(schedules, form***REMOVED***
+    # schedules = sort_schedules(schedules, form***REMOVED***
     return schedules
 
 def sort_schedules(schedules, form***REMOVED***:
